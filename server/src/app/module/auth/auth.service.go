@@ -11,7 +11,6 @@ import (
 	"server/src/core/util"
 )
 
-// SignInService sign in user
 func SignInService(ctx *fiber.Ctx) error {
 	var body repo_user.SignInReqDto
 	if err := core_util.ParseBody(ctx, &body); err != nil {
@@ -57,7 +56,6 @@ func SignInService(ctx *fiber.Ctx) error {
 	})
 }
 
-// SignUpService sign up user
 func SignUpService(ctx *fiber.Ctx) error {
 	var body repo_user.SignUpReqDto
 	if err := core_util.ParseBody(ctx, &body); err != nil {
@@ -76,7 +74,7 @@ func SignUpService(ctx *fiber.Ctx) error {
 		})
 	}
 
-	var existingUser repo_user.UserModel
+	var existingUser repo_user.UserProfileDto
 	if err := core_db.DbInstance.Where("email = ?", body.Email).First(&existingUser).Error; err == nil {
 		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
 			Success: false,
@@ -118,7 +116,6 @@ func SignUpService(ctx *fiber.Ctx) error {
 	})
 }
 
-// SignOutService sign out user
 func SignOutService(ctx *fiber.Ctx) error {
 	core_jwt.DeleteToken(ctx)
 
@@ -129,7 +126,6 @@ func SignOutService(ctx *fiber.Ctx) error {
 	})
 }
 
-// ProfileService user profile
 func ProfileService(ctx *fiber.Ctx) error {
 	user := core_jwt.GetTokenInfo(ctx)
 

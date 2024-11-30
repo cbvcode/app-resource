@@ -8,7 +8,6 @@ import (
 
 var validate = validator.New()
 
-// Validator field validator
 func Validator(body interface{}) *config.ResDto {
 	err := validate.Struct(body)
 	var errors []*config.ErrDto
@@ -20,6 +19,7 @@ func Validator(body interface{}) *config.ResDto {
 			el.Value = err.Param()
 			errors = append(errors, &el)
 		}
+
 		return &config.ResDto{
 			Success: false,
 			Errors:  errors,
@@ -30,7 +30,6 @@ func Validator(body interface{}) *config.ResDto {
 	return nil
 }
 
-// ParseBody parsing the body.
 func ParseBody(ctx *fiber.Ctx, body interface{}) *config.ResDto {
 	if err := ctx.BodyParser(body); err != nil {
 		return &config.ResDto{

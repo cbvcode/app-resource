@@ -5,7 +5,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
-	"os"
 	"server/src/config"
 	"time"
 )
@@ -19,10 +18,7 @@ type TokenData struct {
 const contextKey = "user"
 
 func TokenMiddleware() fiber.Handler {
-	jwtSecret := os.Getenv("JWT_SECRET")
-	if jwtSecret == "" {
-		jwtSecret = "super-secret-jwt-key"
-	}
+	jwtSecret := config.JwtSecret
 
 	return jwtware.New(jwtware.Config{
 		ErrorHandler: func(ctx *fiber.Ctx, err error) error {
@@ -39,12 +35,12 @@ func TokenMiddleware() fiber.Handler {
 }
 
 func CreateToken(ctx *fiber.Ctx, user TokenData) error {
-	jwtSecret := os.Getenv("JWT_SECRET")
+	jwtSecret := config.JwtSecret
 
 	claims := jwt.MapClaims{
 		"id":       user.ID,
-		"Email":    user.Email,
-		"Username": user.Username,
+		"email":    user.Email,
+		"username": user.Username,
 		"exp":      time.Now().Add(time.Hour * 72).Unix(),
 	}
 
@@ -75,19 +71,21 @@ func GetTokenInfo(ctx *fiber.Ctx) *TokenData {
 
 	idStr := claims["id"].(string)
 	id, _ := uuid.Parse(idStr)
+	email := claims["email"].(string)
+	username := claims["username"].(string)
 
 	if id == uuid.Nil {
 		return &TokenData{
 			ID:       uuid.Nil,
-			Email:    claims["email"].(string),
-			Username: claims["username"].(string),
+			Email:    "",
+			Username: "",
 		}
 	}
 
 	return &TokenData{
 		ID:       id,
-		Email:    claims["email"].(string),
-		Username: claims["username"].(string),
+		Email:    email,
+		Username: username,
 	}
 }
 
