@@ -8,26 +8,18 @@ import (
 	"server/src/core/db"
 	"server/src/core/jwt"
 	"server/src/core/pass"
-	"server/src/core/validator"
+	"server/src/core/util"
 )
 
 // SignInService sign in user
 func SignInService(ctx *fiber.Ctx) error {
 	var body repo_user.SignInReqDto
-	if err := ctx.BodyParser(&body); err != nil {
-		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
-			Success: false,
-			Errors:  []*config.ErrDto{{Field: "", Value: "Invalid request body"}},
-			Data:    nil,
-		})
+	if err := core_util.ParseBody(ctx, &body); err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(err)
 	}
 
-	if errors := core_validator.Validator(body); errors != nil {
-		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
-			Success: false,
-			Errors:  errors,
-			Data:    nil,
-		})
+	if err := core_util.Validator(body); err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(err)
 	}
 
 	var user repo_user.UserModel
@@ -68,20 +60,12 @@ func SignInService(ctx *fiber.Ctx) error {
 // SignUpService sign up user
 func SignUpService(ctx *fiber.Ctx) error {
 	var body repo_user.SignUpReqDto
-	if err := ctx.BodyParser(&body); err != nil {
-		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
-			Success: false,
-			Errors:  []*config.ErrDto{{Field: "", Value: "Invalid request body"}},
-			Data:    nil,
-		})
+	if err := core_util.ParseBody(ctx, &body); err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(err)
 	}
 
-	if errors := core_validator.Validator(body); errors != nil {
-		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
-			Success: false,
-			Errors:  errors,
-			Data:    nil,
-		})
+	if err := core_util.Validator(body); err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(err)
 	}
 
 	if body.Password != body.ConfirmPassword {

@@ -5,7 +5,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/gofiber/fiber/v2/middleware/encryptcookie"
 	"github.com/gofiber/fiber/v2/middleware/helmet"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/monitor"
@@ -34,7 +33,6 @@ func main() {
 
 	app.Use(cors.New(cors.Config{AllowOrigins: config.AllowOrigins}))
 	app.Use(helmet.New())
-	app.Use(encryptcookie.New(encryptcookie.Config{Key: config.CookieSecret}))
 	app.Use(compress.New(compress.Config{Level: compress.LevelBestSpeed}))
 	app.Use(recover.New())
 	app.Use(logger.New())
