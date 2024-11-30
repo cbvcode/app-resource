@@ -1,7 +1,6 @@
 package core_limiter
 
 import (
-	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/limiter"
 	"server/src/config"
@@ -25,9 +24,6 @@ func LimiterMiddleware(limit *int) fiber.Handler {
 		KeyGenerator: func(ctx *fiber.Ctx) string {
 			xForwardedFor := ctx.Get("X-Forwarded-For")
 			xRealIP := ctx.Get("X-Real-IP")
-
-			fmt.Println("xForwardedFor: ", xForwardedFor)
-			fmt.Println("xRealIP: ", xRealIP)
 
 			if xForwardedFor != "" {
 				ipList := strings.Split(xForwardedFor, ",")
