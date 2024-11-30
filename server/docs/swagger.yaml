@@ -1,8 +1,134 @@
+definitions:
+  config.ErrDto:
+    properties:
+      field:
+        type: string
+      value:
+        type: string
+    type: object
+  config.ResDto:
+    properties:
+      data: {}
+      errors:
+        items:
+          $ref: '#/definitions/config.ErrDto'
+        type: array
+      success:
+        type: boolean
+    type: object
+  repo_user.SignInReqDto:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  repo_user.SignUpReqDto:
+    properties:
+      confirmPassword:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  repo_user.UserProfileDto:
+    properties:
+      email:
+        type: string
+      id:
+        type: string
+      username:
+        type: string
+    type: object
+  repo_user.UserProfileResDto:
+    properties:
+      data:
+        $ref: '#/definitions/repo_user.UserProfileDto'
+      errors:
+        items:
+          $ref: '#/definitions/config.ErrDto'
+        type: array
+      success:
+        type: boolean
+    type: object
 host: localhost:4000
 info:
   contact: {}
   description: Server docs
   title: Server API
   version: "1.0"
-paths: {}
+paths:
+  /v1/profile:
+    get:
+      consumes:
+      - application/json
+      description: admin profile
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repo_user.UserProfileResDto'
+      tags:
+      - Profile
+  /v1/sign-in:
+    post:
+      consumes:
+      - application/json
+      description: sign in user
+      parameters:
+      - description: sign in body
+        in: body
+        name: json
+        required: true
+        schema:
+          $ref: '#/definitions/repo_user.SignInReqDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/config.ResDto'
+      tags:
+      - Sign
+  /v1/sign-out:
+    post:
+      consumes:
+      - application/json
+      description: sign out user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/config.ResDto'
+      tags:
+      - Sign
+  /v1/sign-up:
+    post:
+      consumes:
+      - application/json
+      description: sign up user
+      parameters:
+      - description: sign up body
+        in: body
+        name: json
+        required: true
+        schema:
+          $ref: '#/definitions/repo_user.SignUpReqDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/config.ResDto'
+      tags:
+      - Sign
 swagger: "2.0"

@@ -12,12 +12,17 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/swagger"
 	_ "server/docs"
+	"server/src/app/migrate"
+	_ "server/src/app/migrate"
 	"server/src/app/route"
-	"server/src/core/config"
+	"server/src/config"
+	"server/src/core/db"
 )
 
 func init() {
-	core_config.InitEnv()
+	config.InitEnv()
+	core_db.InitDB()
+	migrate.InitMigrateDb()
 }
 
 // @title			Server API
@@ -27,9 +32,9 @@ func init() {
 func main() {
 	app := fiber.New()
 
-	app.Use(cors.New(cors.Config{AllowOrigins: core_config.AllowOrigins}))
+	app.Use(cors.New(cors.Config{AllowOrigins: config.AllowOrigins}))
 	app.Use(helmet.New())
-	app.Use(encryptcookie.New(encryptcookie.Config{Key: core_config.CookieSecret}))
+	app.Use(encryptcookie.New(encryptcookie.Config{Key: config.CookieSecret}))
 	app.Use(compress.New(compress.Config{Level: compress.LevelBestSpeed}))
 	app.Use(recover.New())
 	app.Use(logger.New())
@@ -39,7 +44,7 @@ func main() {
 
 	app_route.AppRoutes(app)
 
-	err := app.Listen(fmt.Sprintf(":%v", core_config.Port))
+	err := app.Listen(fmt.Sprintf(":%v", config.Port))
 	if err != nil {
 		panic(err)
 	}
