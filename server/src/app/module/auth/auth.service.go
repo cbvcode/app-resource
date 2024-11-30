@@ -45,6 +45,8 @@ func SignInService(ctx *fiber.Ctx) error {
 		})
 	}
 
+	repo_user.DelUserProfileCache(user.ID)
+
 	return ctx.Status(fiber.StatusOK).JSON(config.ResDto{
 		Success: true,
 		Errors:  nil,
@@ -109,7 +111,9 @@ func SignUpService(ctx *fiber.Ctx) error {
 }
 
 func SignOutService(ctx *fiber.Ctx) error {
-	core_jwt.DeleteToken(ctx)
+	userId := core_jwt.DeleteToken(ctx)
+
+	repo_user.DelUserProfileCache(userId)
 
 	return ctx.Status(fiber.StatusOK).JSON(config.ResDto{
 		Success: true,
@@ -121,6 +125,15 @@ func SignOutService(ctx *fiber.Ctx) error {
 func ProfileService(ctx *fiber.Ctx) error {
 	user := core_jwt.GetTokenInfo(ctx)
 
+	cache := repo_user.GetUserProfileCache(user.ID)
+	if cache != nil {
+		return ctx.Status(fiber.StatusOK).JSON(repo_user.UserProfileResDto{
+			Success: true,
+			Errors:  nil,
+			Data:    cache,
+		})
+	}
+
 	profile := &repo_user.UserProfileDto{}
 	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Where("id = ?", user.ID).First(profile).Error; err != nil {
 		return ctx.Status(fiber.StatusNotFound).JSON(config.ResDto{
@@ -129,6 +142,8 @@ func ProfileService(ctx *fiber.Ctx) error {
 			Data:    nil,
 		})
 	}
+
+	repo_user.SetUserProfileCache(profile.ID, profile)
 
 	return ctx.Status(fiber.StatusOK).JSON(repo_user.UserProfileResDto{
 		Success: true,
