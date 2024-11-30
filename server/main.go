@@ -15,6 +15,7 @@ import (
 	_ "server/src/app/migrate"
 	"server/src/app/route"
 	"server/src/config"
+	"server/src/core/cache"
 	"server/src/core/db"
 )
 
@@ -23,12 +24,13 @@ func init() {
 
 	core_db.InitDB()
 	migrate.InitMigrateDb()
+
+	core_cache.InitStore()
 }
 
 // @title			Server API
 // @version		1.0
 // @description	Server docs
-// @host			localhost:4000
 func main() {
 	app := fiber.New()
 

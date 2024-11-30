@@ -6,7 +6,6 @@
         "contact": {},
         "version": "1.0"
     },
-    "host": "localhost:4000",
     "paths": {
         "/v1/profile": {
             "get": {
