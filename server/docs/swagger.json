@@ -1,11 +1,11 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a doc for Server",
+        "description": "Server docs",
         "title": "Server API",
         "contact": {},
         "version": "1.0"
     },
-    "host": "localhost:8000",
+    "host": "localhost:4000",
     "paths": {}
 }
