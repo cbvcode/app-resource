@@ -7,12 +7,12 @@ import (
 )
 
 var (
-	PORT          = ""
-	ALLOW_ORIGINS = ""
-	JWT_SECRET    = ""
-	COOKIE_SECRET = ""
-	LOCAL_IP      = ""
-	DATABASE_URL  = ""
+	Port         = ""
+	AllowOrigins = ""
+	JwtSecret    = ""
+	CookieSecret = ""
+	LocalIp      = ""
+	DatabaseUrl  = ""
 )
 
 func InitEnv() {
@@ -20,12 +20,12 @@ func InitEnv() {
 		panic("Error loading .env file")
 	}
 
-	PORT = getEnv("PORT", "8000")
-	ALLOW_ORIGINS = getEnv("ALLOW_ORIGINS", "*")
-	JWT_SECRET = getEnv("JWT_SECRET", "your-secret-key")
-	COOKIE_SECRET = getEnv("COOKIE_SECRET", "your-secret-key")
-	LOCAL_IP = getEnv("LOCAL_IP", "35.181.8.72")
-	DATABASE_URL = getEnv("DATABASE_URL", "*")
+	Port = getEnv("PORT", "4000")
+	AllowOrigins = getEnv("ALLOW_ORIGINS", "*")
+	JwtSecret = getEnv("JWT_SECRET", "your-secret-key")
+	CookieSecret = getEnv("COOKIE_SECRET", "your-secret-key")
+	LocalIp = getEnv("LOCAL_IP", "35.181.8.72")
+	DatabaseUrl = getEnv("DATABASE_URL", "host=localhost user=postgres password=password dbname=local port=5434")
 }
 
 func getEnv(name string, fallback string) string {

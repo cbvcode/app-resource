@@ -26,9 +26,9 @@ func init() {
 func main() {
 	app := fiber.New()
 
-	app.Use(cors.New(cors.Config{AllowOrigins: core_config.ALLOW_ORIGINS}))
+	app.Use(cors.New(cors.Config{AllowOrigins: core_config.AllowOrigins}))
 	app.Use(helmet.New())
-	app.Use(encryptcookie.New(encryptcookie.Config{Key: core_config.COOKIE_SECRET}))
+	app.Use(encryptcookie.New(encryptcookie.Config{Key: core_config.CookieSecret}))
 	app.Use(compress.New(compress.Config{Level: compress.LevelBestSpeed}))
 	app.Use(recover.New())
 	app.Use(logger.New())
@@ -36,7 +36,7 @@ func main() {
 	app.Get("/", monitor.New(monitor.Config{Title: "Server Metrics"}))
 	app.Get("/docs/*", swagger.HandlerDefault)
 
-	err := app.Listen(fmt.Sprintf(":%v", core_config.PORT))
+	err := app.Listen(fmt.Sprintf(":%v", core_config.Port))
 	if err != nil {
 		panic(err)
 	}
