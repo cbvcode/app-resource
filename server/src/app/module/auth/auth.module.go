@@ -24,7 +24,7 @@ func AuthModule(app fiber.Router) {
 //	@Success		200		{object}	config.ResDto
 //	@Router			/v1/sign-in [post]
 func SignInRoute(app fiber.Router) {
-	limit := 30
+	limit := 10
 
 	app.Post("sign-in", core_limiter.LimiterMiddleware(&limit), func(ctx *fiber.Ctx) error {
 		return SignInService(ctx)
@@ -41,7 +41,7 @@ func SignInRoute(app fiber.Router) {
 //	@Success		200		{object}	config.ResDto
 //	@Router			/v1/sign-up [post]
 func SignUpRoute(app fiber.Router) {
-	limit := 30
+	limit := 10
 
 	app.Post("sign-up", core_limiter.LimiterMiddleware(&limit), func(ctx *fiber.Ctx) error {
 		return SignUpService(ctx)
@@ -57,7 +57,9 @@ func SignUpRoute(app fiber.Router) {
 //	@Success		200	{object}	config.ResDto
 //	@Router			/v1/sign-out [post]
 func SignOutRoute(app fiber.Router) {
-	app.Post("sign-out", core_limiter.LimiterMiddleware(nil), core_jwt.TokenMiddleware(), func(ctx *fiber.Ctx) error {
+	limit := 10
+
+	app.Post("sign-out", core_limiter.LimiterMiddleware(&limit), core_jwt.TokenMiddleware(), func(ctx *fiber.Ctx) error {
 		return SignOutService(ctx)
 	})
 }

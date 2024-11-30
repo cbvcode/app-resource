@@ -152,9 +152,9 @@ func ProfileService(ctx *fiber.Ctx) error {
 	profile := &repo_user.UserProfileDto{}
 	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Where("id = ?", user.ID).First(profile).Error; err != nil {
 		return ctx.Status(fiber.StatusNotFound).JSON(config.ResDto{
-			Success: false,
-			Errors:  []*config.ErrDto{{Field: "", Value: "User not found"}},
-			Data:    "",
+			Success: true,
+			Errors:  nil,
+			Data:    nil,
 		})
 	}
 
