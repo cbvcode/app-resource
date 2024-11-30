@@ -1,0 +1,8 @@
+host: localhost:8000
+info:
+  contact: {}
+  description: This is a doc for Server
+  title: Server API
+  version: "1.0"
+paths: {}
+swagger: "2.0"

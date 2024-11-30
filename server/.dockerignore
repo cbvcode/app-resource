@@ -1,0 +1,9 @@
+.git
+/.idea
+**/test
+/tmp
+.air.toml
+.gitignore
+.env.example
+Dockerfile-prod
+README.md

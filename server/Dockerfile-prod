@@ -1,0 +1,16 @@
+FROM golang:1.23
+
+WORKDIR /app
+
+COPY go.mod .
+COPY go.sum .
+COPY .dockerignore .
+RUN go mod download
+
+COPY . .
+RUN cp .config.prod .config
+RUN go build -o main .
+
+RUN rm -rf ./src
+
+CMD ["./main"]
