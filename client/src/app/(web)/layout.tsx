@@ -23,7 +23,7 @@ const RootLayout: FC<Readonly<IRootLayoutProps>> = (props) => {
 
   // return
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className={`antialiased`}>
         <UiProvider>
           <RestApiProvider>{children}</RestApiProvider>

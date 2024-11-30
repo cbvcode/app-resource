@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Checkbox, Input, Link } from '@nextui-org/react'
+import { Button, Checkbox, Input, Link, Tooltip } from '@nextui-org/react'
 import { useMutation } from '@tanstack/react-query'
 
 import { Eye, EyeOff } from 'lucide-react'
@@ -63,13 +63,15 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             value={value}
             onChange={onChange}
             endContent={
-              <Button isIconOnly variant={'light'} onClick={toggleVisibility} size={'sm'}>
-                {isVisible ? (
-                  <EyeOff className='text-foreground/50 pointer-events-none' />
-                ) : (
-                  <Eye className='text-foreground/50 pointer-events-none' />
-                )}
-              </Button>
+              <Tooltip content={`${isVisible ? 'Hide' : 'Show'} password`}>
+                <Button isIconOnly variant={'light'} onClick={toggleVisibility} size={'sm'} className={'-mr-1'}>
+                  {isVisible ? (
+                    <EyeOff className='text-foreground/50 pointer-events-none' />
+                  ) : (
+                    <Eye className='text-foreground/50 pointer-events-none' />
+                  )}
+                </Button>
+              </Tooltip>
             }
             label='Password'
             name='password'
@@ -83,7 +85,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
       />
 
       <div className='flex items-center justify-between px-1 py-2'>
-        <Checkbox classNames={{ wrapper: 'before:border-foreground/50' }}>Remember me</Checkbox>
+        <Checkbox size={'sm'}>Remember me</Checkbox>
 
         <Link className='text-foreground/50' href='#' size='sm'>
           Forgot password?
