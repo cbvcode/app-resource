@@ -4,7 +4,7 @@ import (
 	"github.com/dgraph-io/ristretto"
 )
 
-var store *ristretto.Cache
+var cacheInstance *ristretto.Cache
 
 func InitStore() {
 	cache, err := ristretto.NewCache(&ristretto.Config{
@@ -16,11 +16,11 @@ func InitStore() {
 		panic(err)
 	}
 
-	store = cache
+	cacheInstance = cache
 }
 
-func StoreGet(key string) interface{} {
-	value, found := store.Get(key)
+func CacheGet(key string) interface{} {
+	value, found := cacheInstance.Get(key)
 	if !found {
 		return nil
 	}
@@ -28,15 +28,15 @@ func StoreGet(key string) interface{} {
 	return value
 }
 
-func StoreSet(key string, data interface{}) {
-	store.Set(key, data, 1)
+func CacheSet(key string, data interface{}) {
+	cacheInstance.Set(key, data, 1)
 }
 
-func StoreDel(key string) {
-	store.Del(key)
+func CacheDel(key string) {
+	cacheInstance.Del(key)
 }
 
 func StoreRefetch(key string, data interface{}) {
-	StoreDel(key)
-	StoreSet(key, data)
+	CacheDel(key)
+	CacheSet(key, data)
 }
