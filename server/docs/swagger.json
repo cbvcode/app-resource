@@ -10,7 +10,7 @@
     "paths": {
         "/v1/profile": {
             "get": {
-                "description": "admin profile",
+                "description": "user profile",
                 "consumes": [
                     "application/json"
                 ],
@@ -18,7 +18,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Profile"
+                    "Auth"
                 ],
                 "responses": {
                     "200": {
@@ -40,7 +40,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Sign"
+                    "Auth"
                 ],
                 "parameters": [
                     {
@@ -73,7 +73,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Sign"
+                    "Auth"
                 ],
                 "responses": {
                     "200": {
@@ -95,7 +95,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Sign"
+                    "Auth"
                 ],
                 "parameters": [
                     {

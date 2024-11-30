@@ -17,7 +17,7 @@ const docTemplate = `{
     "paths": {
         "/v1/profile": {
             "get": {
-                "description": "admin profile",
+                "description": "user profile",
                 "consumes": [
                     "application/json"
                 ],
@@ -25,7 +25,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Profile"
+                    "Auth"
                 ],
                 "responses": {
                     "200": {
@@ -47,7 +47,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Sign"
+                    "Auth"
                 ],
                 "parameters": [
                     {
@@ -80,7 +80,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Sign"
+                    "Auth"
                 ],
                 "responses": {
                     "200": {
@@ -102,7 +102,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Sign"
+                    "Auth"
                 ],
                 "parameters": [
                     {

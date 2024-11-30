@@ -17,7 +17,7 @@ func AuthModule(app fiber.Router) {
 // SignInRoute
 //
 //	@Description	sign in user
-//	@Tags			Sign
+//	@Tags			Auth
 //	@Accept			json
 //	@Produce		json
 //	@Param			json	body		repo_user.SignInReqDto	true	"sign in body"
@@ -34,7 +34,7 @@ func SignInRoute(app fiber.Router) {
 // SignUpRoute
 //
 //	@Description	sign up user
-//	@Tags			Sign
+//	@Tags			Auth
 //	@Accept			json
 //	@Produce		json
 //	@Param			json	body		repo_user.SignUpReqDto	true	"sign up body"
@@ -51,7 +51,7 @@ func SignUpRoute(app fiber.Router) {
 // SignOutRoute
 //
 //	@Description	sign out user
-//	@Tags			Sign
+//	@Tags			Auth
 //	@Accept			json
 //	@Produce		json
 //	@Success		200	{object}	config.ResDto
@@ -64,8 +64,8 @@ func SignOutRoute(app fiber.Router) {
 
 // ProfileRoute
 //
-//	@Description	admin profile
-//	@Tags			Profile
+//	@Description	user profile
+//	@Tags			Auth
 //	@Accept			json
 //	@Produce		json
 //	@Success		200	{object}	repo_user.UserProfileResDto

@@ -65,7 +65,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: admin profile
+      description: user profile
       produces:
       - application/json
       responses:
@@ -74,7 +74,7 @@ paths:
           schema:
             $ref: '#/definitions/repo_user.UserProfileResDto'
       tags:
-      - Profile
+      - Auth
   /v1/sign-in:
     post:
       consumes:
@@ -95,7 +95,7 @@ paths:
           schema:
             $ref: '#/definitions/config.ResDto'
       tags:
-      - Sign
+      - Auth
   /v1/sign-out:
     post:
       consumes:
@@ -109,7 +109,7 @@ paths:
           schema:
             $ref: '#/definitions/config.ResDto'
       tags:
-      - Sign
+      - Auth
   /v1/sign-up:
     post:
       consumes:
@@ -130,5 +130,5 @@ paths:
           schema:
             $ref: '#/definitions/config.ResDto'
       tags:
-      - Sign
+      - Auth
 swagger: "2.0"
