@@ -12,6 +12,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/swagger"
 	_ "server/docs"
+	"server/src/app/route"
 	"server/src/core/config"
 )
 
@@ -35,6 +36,8 @@ func main() {
 
 	app.Get("/", monitor.New(monitor.Config{Title: "Server Metrics"}))
 	app.Get("/docs/*", swagger.HandlerDefault)
+
+	app_route.AppRoutes(app)
 
 	err := app.Listen(fmt.Sprintf(":%v", core_config.Port))
 	if err != nil {
