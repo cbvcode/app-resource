@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { SignInFormElement } from './elements/sign-in-form'
-import { Feather } from 'lucide-react'
+import { LogIn, PencilRuler } from 'lucide-react'
 
 import { FC } from 'react'
 
@@ -24,18 +24,14 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
       }}
     >
       <div className={'absolute right-10 top-10'}>
-        <div className={'flex items-center'}>
-          <Feather />
-          <p className={'font-medium text-white'}>ACME</p>
+        <div className={'flex items-center gap-2'}>
+          <PencilRuler size={18} />
+          <h1 className={'text-xl font-medium text-white'}>CRM</h1>
         </div>
       </div>
 
-      <div className={'absolute bottom-10 right-10 hidden md:block'}>
-        <p className={'max-w-xl text-right text-white/60'}>
-          <span className={'font-medium'}>“</span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquet.
-          <span className={'font-medium'}>”</span>
-        </p>
+      <div className={'absolute bottom-10 right-10'}>
+        <p className={'text-small max-w-xl text-center text-white/60'}>Manage your content anytime from anywhere.</p>
       </div>
 
       <div
@@ -43,13 +39,15 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
           'rounded-large bg-background/60 shadow-small dark:bg-default-100/50 flex w-full max-w-sm flex-col gap-4 px-8 pb-10 pt-6 backdrop-blur-md backdrop-saturate-150'
         }
       >
-        <p className={'pb-2 text-xl font-medium'}>Log In</p>
+        <div className={'grid grid-cols-[1fr_auto] items-center pb-2'}>
+          <p className={'text-xl font-medium'}>Log In</p>
+          <LogIn size={20} />
+        </div>
 
         <SignInFormElement />
 
         <p className={'text-small text-center'}>
-          Need to create an account?&nbsp;
-          <Link href='#'>Sign Up</Link>
+          <Link href='#'>Forgot password?</Link>
         </p>
       </div>
     </div>

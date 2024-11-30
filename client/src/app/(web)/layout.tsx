@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import { FC, ReactNode } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 import { RestApiProvider } from '@/core/rest-api'
 import { UiProvider } from '@/core/ui'
@@ -27,6 +28,8 @@ const RootLayout: FC<Readonly<IRootLayoutProps>> = (props) => {
       <body className={`antialiased`}>
         <UiProvider>
           <RestApiProvider>{children}</RestApiProvider>
+
+          <Toaster />
         </UiProvider>
       </body>
     </html>
