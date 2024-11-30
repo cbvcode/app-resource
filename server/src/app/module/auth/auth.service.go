@@ -21,15 +21,15 @@ func SignInService(ctx *fiber.Ctx) error {
 		return ctx.Status(fiber.StatusBadRequest).JSON(err)
 	}
 
-	var user repo_user.UserModel
-	if err := core_db.DbInstance.Where("email = ?", body.Email).First(&user).Error; err != nil {
+	user := &repo_user.UserModel{}
+	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Where("email = ?", body.Email).First(user).Error; err != nil {
 		return ctx.Status(fiber.StatusNotFound).JSON(config.ResDto{
 			Errors: []*config.ErrDto{{Field: "", Value: "Incorrect email or password"}},
 			Data:   nil,
 		})
 	}
 
-	if !core_pass.VerifyPass(body.Password, user.Password) {
+	if !core_pass.Verify(body.Password, user.Password) {
 		return ctx.Status(fiber.StatusNotFound).JSON(config.ResDto{
 			Success: false,
 			Errors:  []*config.ErrDto{{Field: "", Value: "Incorrect email or password"}},
@@ -37,11 +37,7 @@ func SignInService(ctx *fiber.Ctx) error {
 		})
 	}
 
-	if err := core_jwt.CreateToken(ctx, core_jwt.TokenData{
-		ID:       user.ID,
-		Email:    user.Email,
-		Username: user.Username,
-	}); err != nil {
+	if err := core_jwt.CreateToken(ctx, core_jwt.TokenData{ID: user.ID}); err != nil {
 		return ctx.Status(fiber.StatusInternalServerError).JSON(config.ResDto{
 			Success: false,
 			Errors:  []*config.ErrDto{{Field: "", Value: "Failed to create token"}},
@@ -74,8 +70,8 @@ func SignUpService(ctx *fiber.Ctx) error {
 		})
 	}
 
-	var existingUser repo_user.UserProfileDto
-	if err := core_db.DbInstance.Where("email = ?", body.Email).First(&existingUser).Error; err == nil {
+	existingUser := &repo_user.UserProfileDto{}
+	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Where("email = ?", body.Email).First(existingUser).Error; err == nil {
 		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
 			Success: false,
 			Errors:  []*config.ErrDto{{Field: "email", Value: "Email already in use"}},
@@ -86,10 +82,10 @@ func SignUpService(ctx *fiber.Ctx) error {
 	newUser := &repo_user.UserModel{
 		Email:    body.Email,
 		Username: body.Username,
-		Password: core_pass.HashPass(body.Password),
+		Password: core_pass.Generate(body.Password),
 	}
 
-	if err := core_db.DbInstance.Create(newUser).Error; err != nil {
+	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Create(newUser).Error; err != nil {
 		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
 			Success: false,
 			Errors:  []*config.ErrDto{{Field: "", Value: fmt.Sprintf("Failed to create user: %s", err)}},
@@ -97,11 +93,7 @@ func SignUpService(ctx *fiber.Ctx) error {
 		})
 	}
 
-	if err := core_jwt.CreateToken(ctx, core_jwt.TokenData{
-		ID:       newUser.ID,
-		Username: newUser.Username,
-		Email:    newUser.Email,
-	}); err != nil {
+	if err := core_jwt.CreateToken(ctx, core_jwt.TokenData{ID: newUser.ID}); err != nil {
 		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
 			Success: false,
 			Errors:  []*config.ErrDto{{Field: "", Value: fmt.Sprintf("Failed to create user: %s", err)}},

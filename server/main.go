@@ -20,6 +20,7 @@ import (
 
 func init() {
 	config.InitEnv()
+
 	core_db.InitDB()
 	migrate.InitMigrateDb()
 }

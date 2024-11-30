@@ -10,9 +10,7 @@ import (
 )
 
 type TokenData struct {
-	ID       uuid.UUID `json:"id"`
-	Email    string    `json:"email"`
-	Username string    `json:"username"`
+	ID uuid.UUID `json:"id"`
 }
 
 const contextKey = "user"
@@ -38,10 +36,8 @@ func CreateToken(ctx *fiber.Ctx, user TokenData) error {
 	jwtSecret := config.JwtSecret
 
 	claims := jwt.MapClaims{
-		"id":       user.ID,
-		"email":    user.Email,
-		"username": user.Username,
-		"exp":      time.Now().Add(time.Hour * 72).Unix(),
+		"id":  user.ID,
+		"exp": time.Now().Add(time.Hour * 72).Unix(),
 	}
 
 	tokenData := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
@@ -71,21 +67,15 @@ func GetTokenInfo(ctx *fiber.Ctx) *TokenData {
 
 	idStr := claims["id"].(string)
 	id, _ := uuid.Parse(idStr)
-	email := claims["email"].(string)
-	username := claims["username"].(string)
 
 	if id == uuid.Nil {
 		return &TokenData{
-			ID:       uuid.Nil,
-			Email:    "",
-			Username: "",
+			ID: uuid.Nil,
 		}
 	}
 
 	return &TokenData{
-		ID:       id,
-		Email:    email,
-		Username: username,
+		ID: id,
 	}
 }
 

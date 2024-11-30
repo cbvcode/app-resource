@@ -8,7 +8,7 @@ import (
 )
 
 type UserProfileDto struct {
-	ID       uuid.UUID `gorm:"type:uuid;"`
+	ID       uuid.UUID `json:"id" gorm:"type:uuid;"`
 	Email    string    `json:"email"`
 	Username string    `json:"username"`
 }
