@@ -17,7 +17,7 @@ const UiProvider: FC<Readonly<IUiProviderProps>> = (props) => {
   // return
   return (
     <NextUIProvider>
-      <NextThemesProvider attribute='class' defaultTheme='dark'>
+      <NextThemesProvider attribute={'class'} defaultTheme={'dark'}>
         {children}
       </NextThemesProvider>
     </NextUIProvider>

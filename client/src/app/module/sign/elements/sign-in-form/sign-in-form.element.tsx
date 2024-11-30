@@ -37,7 +37,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
 
   // return
   return (
-    <form className='flex flex-col gap-3' onSubmit={handleSubmit(handleSignIn)}>
+    <form className={'flex flex-col gap-3'} onSubmit={handleSubmit(handleSignIn)}>
       <Controller
         control={control}
         name={'email'}
@@ -45,10 +45,9 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
           <Input
             value={value}
             onChange={onChange}
-            label='Email Address'
-            name='email'
-            placeholder='Enter your email'
-            variant='bordered'
+            label={'Email Address'}
+            placeholder={'Enter your email'}
+            variant={'bordered'}
             isInvalid={!!error?.message}
             errorMessage={error?.message}
           />
@@ -66,33 +65,33 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
               <Tooltip content={`${isVisible ? 'Hide' : 'Show'} password`}>
                 <Button isIconOnly variant={'light'} onClick={toggleVisibility} size={'sm'} className={'-mr-1'}>
                   {isVisible ? (
-                    <EyeOff className='text-foreground/50 pointer-events-none' />
+                    <EyeOff className={'text-foreground/50 pointer-events-none'} />
                   ) : (
-                    <Eye className='text-foreground/50 pointer-events-none' />
+                    <Eye className={'text-foreground/50 pointer-events-none'} />
                   )}
                 </Button>
               </Tooltip>
             }
-            label='Password'
-            name='password'
-            placeholder='Enter your password'
+            label={'Password'}
+            name={'password'}
+            placeholder={'Enter your password'}
             type={isVisible ? 'text' : 'password'}
-            variant='bordered'
+            variant={'bordered'}
             isInvalid={!!error?.message}
             errorMessage={error?.message}
           />
         )}
       />
 
-      <div className='flex items-center justify-between px-1 py-2'>
+      <div className={'flex items-center justify-between px-1 py-2'}>
         <Checkbox size={'sm'}>Remember me</Checkbox>
 
-        <Link className='text-foreground/50' href='#' size='sm'>
+        <Link className={'text-foreground/50'} href='#' size={'sm'}>
           Forgot password?
         </Link>
       </div>
 
-      <Button isLoading={isPending} type='submit'>
+      <Button isLoading={isPending} type={'submit'} color={'primary'}>
         Log In
       </Button>
     </form>

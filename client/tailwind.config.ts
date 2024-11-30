@@ -30,7 +30,7 @@ export default {
         },
         borderWidth: {
           small: '1px', // border-small
-          medium: '1px', // border-medium (default)
+          medium: '1px', // border-medium
           large: '2px', // border-large
         },
       },
@@ -39,12 +39,20 @@ export default {
           colors: {
             background: '#F0FCFF',
             foreground: '#053B48',
+            primary: {
+              DEFAULT: '#053B48',
+              foreground: '#ffffff',
+            },
           },
         },
         dark: {
           colors: {
             background: '#0d0d0e',
             foreground: '#F0FCFF',
+            primary: {
+              DEFAULT: '#053B48',
+              foreground: '#ffffff',
+            },
           },
         },
       },
