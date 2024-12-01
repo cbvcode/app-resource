@@ -8,8 +8,7 @@ import { Eye, EyeOff } from 'lucide-react'
 import { FC, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-import { signInApi } from '@/app/shared/api/sign/sign.api'
-import { ISignInReq } from '@/app/shared/api/sign/sign.interface'
+import { ISignInReq, signInApi } from '@/app/shared/api/sign/sign.api'
 import { customToast } from '@/core/toast'
 
 // interface
