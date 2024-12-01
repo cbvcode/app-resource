@@ -33,7 +33,7 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
 
       <div
         className={
-          'flex w-full max-w-sm flex-col gap-4 rounded-large bg-default-100/50 px-8 py-6 shadow-small backdrop-blur-md backdrop-saturate-150'
+          'flex w-full max-w-md flex-col gap-4 rounded-large bg-default-100/50 px-5 py-6 shadow-small backdrop-blur-md backdrop-saturate-150 sm:px-8'
         }
       >
         <div className={'grid grid-cols-[1fr_auto] items-center pb-2'}>
