@@ -15,7 +15,7 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
     <main
       className={'flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-2 sm:p-4 lg:p-8'}
       style={{
-        backgroundImage: 'url(/image/sign-bg.jpg)',
+        backgroundImage: 'url(/image/sign-bg.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
