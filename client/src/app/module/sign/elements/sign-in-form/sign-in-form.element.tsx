@@ -76,9 +76,9 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
                   aria-label={`${isVisible ? 'Hide' : 'Show'} password`}
                 >
                   {isVisible ? (
-                    <EyeOff className={'text-foreground/50 pointer-events-none'} />
+                    <EyeOff className={'pointer-events-none text-foreground/50'} />
                   ) : (
-                    <Eye className={'text-foreground/50 pointer-events-none'} />
+                    <Eye className={'pointer-events-none text-foreground/50'} />
                   )}
                 </Button>
               </Tooltip>

@@ -4,7 +4,21 @@ import type { Config } from 'tailwindcss'
 
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'],
-  theme: { extend: {} },
+  theme: {
+    screens: {
+      sm: '640px',
+      md: '1024px',
+      lg: '1280px',
+    },
+    spacing: {
+      '1': '8px',
+      '2': '12px',
+      '3': '16px',
+      '4': '24px',
+      '5': '32px',
+      '6': '48px',
+    },
+  },
   darkMode: 'class',
   plugins: [
     nextui({
