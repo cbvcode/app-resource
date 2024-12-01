@@ -16,7 +16,7 @@ const style: CSSProperties = {
   lineHeight: '1.1',
 }
 
-// react toast
+// toast
 const ReactToast = () => {
   const customToast: IToast = (msg, type) => {
     toast[type](msg, {

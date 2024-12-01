@@ -1,6 +1,7 @@
 import ky, { KyInstance } from 'ky'
 
-export const apiFetcher: KyInstance = ky.create({
+export const restApiFetcher: KyInstance = ky.create({
   prefixUrl: `${process.env.NEXT_PUBLIC_SERVER_URL}`,
   credentials: 'include',
+  throwHttpErrors: false,
 })

@@ -12,13 +12,10 @@ interface ISignModuleProps {}
 const SignModule: FC<Readonly<ISignModuleProps>> = () => {
   // return
   return (
-    <div
-      className={
-        'rounded-small bg-content1 flex h-screen w-screen items-center justify-center overflow-hidden p-2 sm:p-4 lg:p-8'
-      }
+    <main
+      className={'flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-2 sm:p-4 lg:p-8'}
       style={{
-        backgroundImage:
-          'url(https://nextuipro.nyc3.cdn.digitaloceanspaces.com/components-images/black-background-texture-2.jpg)',
+        backgroundImage: 'url(/image/sign-bg.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -31,12 +28,12 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
       </div>
 
       <div className={'absolute bottom-10 right-10'}>
-        <p className={'text-small max-w-xl text-center text-white/60'}>Manage your content anytime from anywhere.</p>
+        <p className={'max-w-xl text-center text-small text-white/60'}>Manage your content anytime from anywhere.</p>
       </div>
 
       <div
         className={
-          'rounded-large bg-background/60 shadow-small dark:bg-default-100/50 flex w-full max-w-sm flex-col gap-4 px-8 pb-10 pt-6 backdrop-blur-md backdrop-saturate-150'
+          'flex w-full max-w-sm flex-col gap-4 rounded-large bg-default-100/50 px-8 pb-10 pt-6 shadow-small backdrop-blur-md backdrop-saturate-150'
         }
       >
         <div className={'grid grid-cols-[1fr_auto] items-center pb-2'}>
@@ -46,11 +43,11 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
 
         <SignInFormElement />
 
-        <p className={'text-small text-center'}>
+        <p className={'text-center text-small'}>
           <Link href='#'>Forgot password?</Link>
         </p>
       </div>
-    </div>
+    </main>
   )
 }
 
