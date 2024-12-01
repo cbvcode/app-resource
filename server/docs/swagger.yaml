@@ -13,6 +13,8 @@ definitions:
         items:
           $ref: '#/definitions/config.ErrDto'
         type: array
+      message:
+        type: string
       success:
         type: boolean
     type: object
@@ -51,6 +53,8 @@ definitions:
         items:
           $ref: '#/definitions/config.ErrDto'
         type: array
+      message:
+        type: string
       success:
         type: boolean
     type: object

@@ -7,6 +7,7 @@ type ErrDto struct {
 
 type ResDto struct {
 	Success bool        `json:"success"`
+	Message string      `json:"message"`
 	Errors  []*ErrDto   `json:"errors"`
 	Data    interface{} `json:"data"`
 }

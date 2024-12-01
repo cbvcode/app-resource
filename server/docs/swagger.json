@@ -140,6 +140,9 @@
                         "$ref": "#/definitions/config.ErrDto"
                     }
                 },
+                "message": {
+                    "type": "string"
+                },
                 "success": {
                     "type": "boolean"
                 }
@@ -198,6 +201,9 @@
                     "items": {
                         "$ref": "#/definitions/config.ErrDto"
                     }
+                },
+                "message": {
+                    "type": "string"
                 },
                 "success": {
                     "type": "boolean"

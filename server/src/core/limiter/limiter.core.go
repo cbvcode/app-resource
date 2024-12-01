@@ -41,7 +41,8 @@ func LimiterMiddleware(limit *int) fiber.Handler {
 		LimitReached: func(c *fiber.Ctx) error {
 			return c.Status(fiber.StatusTooManyRequests).JSON(config.ResDto{
 				Success: false,
-				Errors:  []*config.ErrDto{{Field: "", Value: "Too many requests. Please try again later."}},
+				Message: "Too many requests. Please try again later",
+				Errors:  nil,
 				Data:    nil,
 			})
 		},

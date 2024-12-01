@@ -27,6 +27,7 @@ type SignUpReqDto struct {
 
 type UserProfileResDto struct {
 	Success bool             `json:"success"`
+	Message string           `json:"message"`
 	Errors  []*config.ErrDto `json:"errors"`
 	Data    *UserProfileDto  `json:"data"`
 }

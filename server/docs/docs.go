@@ -148,6 +148,9 @@ const docTemplate = `{
                         "$ref": "#/definitions/config.ErrDto"
                     }
                 },
+                "message": {
+                    "type": "string"
+                },
                 "success": {
                     "type": "boolean"
                 }
@@ -206,6 +209,9 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/config.ErrDto"
                     }
+                },
+                "message": {
+                    "type": "string"
                 },
                 "success": {
                     "type": "boolean"

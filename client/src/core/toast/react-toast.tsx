@@ -6,8 +6,7 @@ interface IToast {
 }
 
 const style: CSSProperties = {
-  backgroundColor: 'var(--nextui-background)',
-  border: '1px solid var(--nextui-foreground)',
+  backgroundColor: 'hsl(var(--nextui-background))',
   fontFamily: 'inherit, sans-serif',
   fontSize: '14px',
   fontWeight: '500',

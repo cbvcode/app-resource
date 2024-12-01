@@ -45,7 +45,8 @@ func CreateToken(ctx *fiber.Ctx, user TokenData) error {
 	if err != nil {
 		return ctx.Status(fiber.StatusUnauthorized).JSON(config.ResDto{
 			Success: false,
-			Errors:  []*config.ErrDto{{Field: "", Value: "You are Unauthorized"}},
+			Message: "You are Unauthorized",
+			Errors:  nil,
 			Data:    nil,
 		})
 	}

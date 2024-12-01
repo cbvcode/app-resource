@@ -10,6 +10,7 @@ import { Controller, useForm } from 'react-hook-form'
 
 import { signInApi } from '@/app/shared/api/sign/sign.api'
 import { ISignInReq } from '@/app/shared/api/sign/sign.interface'
+import { customToast } from '@/core/toast'
 
 // interface
 interface ISignInFormElementProps {}
@@ -27,9 +28,13 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
     mutationFn: signInApi,
     onSuccess: (res) => {
       if (!res?.success) {
-        res?.errors?.map((el) =>
-          setError(el?.field?.toLowerCase() as any, { message: el?.value }, { shouldFocus: true }),
-        )
+        customToast(res.message, 'error')
+
+        if (res.errors) {
+          res?.errors?.map((el) =>
+            setError(el?.field?.toLowerCase() as any, { message: el?.value }, { shouldFocus: true }),
+          )
+        }
       }
     },
   })
@@ -66,7 +71,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             isInvalid={!!error?.message}
             errorMessage={error?.message}
             endContent={
-              <Tooltip content={`${isVisible ? 'Hide' : 'Show'} password`}>
+              <Tooltip content={`${isVisible ? 'Hide' : 'Show'} password`} placement={'left'}>
                 <Button
                   onClick={handleVisibility}
                   className={'-mr-1'}
