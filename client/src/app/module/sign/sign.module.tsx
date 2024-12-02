@@ -27,7 +27,7 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
         </div>
       </div>
 
-      <div className={'absolute bottom-10 right-10'}>
+      <div className={'absolute bottom-10 right-10 hidden md:block'}>
         <p className={'max-w-xl text-center text-small text-white/60'}>Manage your content anytime from anywhere.</p>
       </div>
 

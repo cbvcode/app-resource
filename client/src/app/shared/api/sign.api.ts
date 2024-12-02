@@ -1,3 +1,5 @@
+import { IRes } from '@/app/shared/interface/api.interface'
+import { EReqRoute } from '@/app/shared/interface/route.interface'
 import { restApiFetcher } from '@/core/rest-api/fetcher'
 
 export interface ISignInReq {
@@ -5,13 +7,10 @@ export interface ISignInReq {
   password: string
 }
 
-export interface ISignInRes {
-  success: boolean
-  message: string
-  errors: { field: string; value: string }[] | null
+export interface ISignInRes extends IRes {
   data: string | null
 }
 
 export const signInApi = (json: ISignInReq) => {
-  return restApiFetcher.post<ISignInRes>('sign-in', { json }).json()
+  return restApiFetcher.post<ISignInRes>(EReqRoute.SIGN_IN, { json }).json()
 }
