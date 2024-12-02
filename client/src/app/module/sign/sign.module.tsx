@@ -13,7 +13,7 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
   // return
   return (
     <main
-      className={'flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-2 sm:p-4 lg:p-8'}
+      className={'flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-4 sm:p-6 lg:p-8'}
       style={{
         backgroundImage: 'url(/image/sign-bg.webp)',
         backgroundSize: 'cover',
@@ -33,7 +33,7 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
 
       <div
         className={
-          'flex w-full max-w-md flex-col gap-4 rounded-large bg-default-100/50 px-5 py-6 shadow-small backdrop-blur-md backdrop-saturate-150 sm:px-8'
+          'flex w-full max-w-md flex-col gap-4 rounded-large bg-default-100/75 px-5 py-6 drop-shadow-sm backdrop-blur-sm backdrop-saturate-150 sm:px-8'
         }
       >
         <div className={'grid grid-cols-[1fr_auto] items-center pb-2'}>
