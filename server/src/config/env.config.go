@@ -10,7 +10,6 @@ var (
 	Port         = ""
 	AllowOrigins = ""
 	JwtSecret    = ""
-	CookieSecret = ""
 	LocalIp      = ""
 	DatabaseUrl  = ""
 )
@@ -23,7 +22,6 @@ func InitEnv() {
 	Port = getEnv("PORT", "4000")
 	AllowOrigins = getEnv("ALLOW_ORIGINS", "*")
 	JwtSecret = getEnv("JWT_SECRET", "your-secret-key")
-	CookieSecret = getEnv("COOKIE_SECRET", "your-secret-key")
 	LocalIp = getEnv("LOCAL_IP", "35.181.8.72")
 	DatabaseUrl = getEnv("DATABASE_URL", "host=localhost user=postgres password=password dbname=local port=5434")
 }

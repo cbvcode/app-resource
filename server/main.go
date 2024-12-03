@@ -22,7 +22,7 @@ import (
 func init() {
 	config.InitEnv()
 
-	core_db.InitDB()
+	core_db.InitDb()
 	migrate.InitMigrateDb()
 
 	core_cache.InitStore()

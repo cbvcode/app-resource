@@ -7,9 +7,9 @@ import (
 	"server/src/config"
 )
 
-var DbInstance *gorm.DB
+var Db *gorm.DB
 
-func InitDB() {
+func InitDb() {
 	dsn := config.DatabaseUrl
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
@@ -21,5 +21,5 @@ func InitDB() {
 		panic("Failed to connect to database")
 	}
 
-	DbInstance = db
+	Db = db
 }

@@ -22,8 +22,8 @@ func SignInService(ctx *fiber.Ctx) error {
 	}
 
 	user := &repo_user.UserModel{}
-	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Where("email = ?", body.Email).First(user).Error; err != nil {
-		return ctx.Status(fiber.StatusNotFound).JSON(config.ResDto{
+	if err := core_db.Db.Model(repo_user.UserModel{}).Where("email = ?", body.Email).First(user).Error; err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
 			Success: false,
 			Message: "Incorrect email or password",
 			Errors:  nil,
@@ -32,7 +32,7 @@ func SignInService(ctx *fiber.Ctx) error {
 	}
 
 	if !core_pass.Verify(body.Password, user.Password) {
-		return ctx.Status(fiber.StatusNotFound).JSON(config.ResDto{
+		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
 			Success: false,
 			Message: "Incorrect email or password",
 			Errors:  nil,
@@ -79,7 +79,7 @@ func SignUpService(ctx *fiber.Ctx) error {
 	}
 
 	existingUser := &repo_user.UserProfileDto{}
-	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Where("email = ?", body.Email).First(existingUser).Error; err == nil {
+	if err := core_db.Db.Model(repo_user.UserModel{}).Where("email = ?", body.Email).First(existingUser).Error; err == nil {
 		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
 			Success: false,
 			Message: "Email already in use",
@@ -94,7 +94,7 @@ func SignUpService(ctx *fiber.Ctx) error {
 		Password: core_pass.Generate(body.Password),
 	}
 
-	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Create(newUser).Error; err != nil {
+	if err := core_db.Db.Model(repo_user.UserModel{}).Create(newUser).Error; err != nil {
 		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
 			Success: false,
 			Message: fmt.Sprintf("Failed to create user: %s", err),
@@ -104,7 +104,7 @@ func SignUpService(ctx *fiber.Ctx) error {
 	}
 
 	if err := core_jwt.CreateToken(ctx, core_jwt.TokenData{ID: newUser.ID}); err != nil {
-		return ctx.Status(fiber.StatusBadRequest).JSON(config.ResDto{
+		return ctx.Status(fiber.StatusInternalServerError).JSON(config.ResDto{
 			Success: false,
 			Message: fmt.Sprintf("Failed to create user: %s", err),
 			Errors:  nil,
@@ -147,7 +147,7 @@ func ProfileService(ctx *fiber.Ctx) error {
 	}
 
 	profile := &repo_user.UserProfileDto{}
-	if err := core_db.DbInstance.Model(repo_user.UserModel{}).Where("id = ?", user.ID).First(profile).Error; err != nil {
+	if err := core_db.Db.Model(repo_user.UserModel{}).Where("id = ?", user.ID).First(profile).Error; err != nil {
 		return ctx.Status(fiber.StatusNotFound).JSON(config.ResDto{
 			Success: true,
 			Message: "User not found",

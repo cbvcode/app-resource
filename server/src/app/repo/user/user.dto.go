@@ -22,7 +22,7 @@ type SignUpReqDto struct {
 	Email           string `json:"email" validate:"required=required,email=incorrect email format"`
 	Username        string `json:"username" validate:"required=required"`
 	ConfirmPassword string `json:"confirmPassword" validate:"required=required"`
-	Password        string `json:"password" validate:"required=required"`
+	Password        string `json:"password" validate:"required=required,gte=10"`
 }
 
 type UserProfileResDto struct {
