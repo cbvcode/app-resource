@@ -6,7 +6,7 @@ import (
 )
 
 func InitMigrateDb() {
-	err := core_db.DbInstance.AutoMigrate(&repo_user.UserModel{})
+	err := core_db.Db.AutoMigrate(&repo_user.UserModel{})
 	if err != nil {
 		panic(err)
 	}
