@@ -1,9 +1,12 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { SignInFormElement } from './elements/sign-in-form'
 import { LogIn, PencilRuler } from 'lucide-react'
 
 import { FC } from 'react'
+
+import { EStaticImage } from '@/app/shared/interface/asset.interface'
 
 // interface
 interface ISignModuleProps {}
@@ -13,13 +16,12 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
   // return
   return (
     <main
-      className={'flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-4 sm:p-6 lg:p-8'}
-      style={{
-        backgroundImage: 'url(/image/sign-bg.webp)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className={
+        'relative flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-4 sm:p-6 lg:p-8'
+      }
     >
+      <Image src={EStaticImage.SIGN_BG} alt={'bg'} fill sizes={'100vw'} />
+
       <div className={'absolute right-10 top-10'}>
         <div className={'flex items-center gap-2'}>
           <PencilRuler size={18} />
