@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { SignInFormElement } from './elements/sign-in-form'
@@ -16,18 +15,13 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
   // return
   return (
     <main
-      className={
-        'relative flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-4 sm:p-6 lg:p-8'
-      }
+      className={'flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-4 sm:p-6 lg:p-8'}
+      style={{
+        backgroundImage: `url(${EStaticImage.SIGN_BG})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
-      <Image
-        src={EStaticImage.SIGN_BG}
-        alt={'bg'}
-        fill
-        sizes={'100vw'}
-        className={'pointer-events-none object-cover'}
-      />
-
       <div className={'absolute right-10 top-10'}>
         <div className={'flex items-center gap-2'}>
           <PencilRuler size={18} />
