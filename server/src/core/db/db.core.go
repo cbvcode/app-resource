@@ -16,7 +16,6 @@ func InitDb() {
 		Logger:                 logger.Default.LogMode(logger.Info),
 		PrepareStmt:            true,
 		SkipDefaultTransaction: true,
-		QueryFields:            true,
 	})
 	if err != nil {
 		panic("Failed to connect to database")
