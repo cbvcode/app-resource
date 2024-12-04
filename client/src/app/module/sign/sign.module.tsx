@@ -20,7 +20,13 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
         'relative flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-4 sm:p-6 lg:p-8'
       }
     >
-      <Image src={EStaticImage.SIGN_BG} alt={'bg'} fill sizes={'100vw'} className={'object-cover'} />
+      <Image
+        src={EStaticImage.SIGN_BG}
+        alt={'bg'}
+        fill
+        sizes={'100vw'}
+        className={'pointer-events-none object-cover'}
+      />
 
       <div className={'absolute right-10 top-10'}>
         <div className={'flex items-center gap-2'}>
