@@ -10,6 +10,7 @@ import { Controller, useForm } from 'react-hook-form'
 
 import { ISignInReq, signInApi } from '@/app/shared/api/sign.api'
 import { customToast } from '@/core/toast'
+import { errorService } from '@/core/util/util.service'
 
 // interface
 interface ISignInFormElementProps {}
@@ -28,11 +29,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
     onSuccess: (res) => {
       customToast(res.message, 'error')
 
-      if (!res?.success && res.errors?.length) {
-        res?.errors?.map((el) =>
-          setError(el?.field?.toLowerCase() as any, { message: el?.value }, { shouldFocus: true }),
-        )
-      }
+      errorService(res, setError)
     },
   })
   const handleSignIn = (data: ISignInReq) => {
