@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { SignInFormElement } from './elements/sign-in-form'
-import { LogIn, PencilRuler } from 'lucide-react'
+import { PencilRuler } from 'lucide-react'
 
 import { FC } from 'react'
 
@@ -38,9 +38,9 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
           'flex w-full max-w-md flex-col gap-4 rounded-large bg-default-100/75 px-5 py-6 drop-shadow-sm backdrop-blur-sm backdrop-saturate-150 sm:px-8'
         }
       >
-        <div className={'grid grid-cols-[1fr_auto] items-center pb-2'}>
-          <p className={'text-xl font-medium'}>Log In</p>
-          <LogIn size={20} />
+        <div className='w-full text-left'>
+          <p className='pb-2 text-xl font-medium'>Welcome Back</p>
+          <p className='text-small text-default-500'>Log in to your account to continue</p>
         </div>
 
         <SignInFormElement />

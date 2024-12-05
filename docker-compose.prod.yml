@@ -1,0 +1,31 @@
+version: '3.8'
+
+name: app-resource
+
+services:
+  server:
+    container_name: prod-server
+    build:
+      context: server
+      dockerfile: Dockerfile-prod
+    restart: always
+    ports:
+      - '4000:4000'
+    networks:
+      - prod-network
+
+  client:
+    depends_on:
+      - prod-server
+    container_name: prod-client
+    build:
+      context: client
+      dockerfile: Dockerfile-prod
+    restart: always
+    ports:
+      - '3000:3000'
+    networks:
+      - prod-network
+
+networks:
+  prod-network:

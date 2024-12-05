@@ -26,14 +26,12 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: signInApi,
     onSuccess: (res) => {
-      if (!res?.success) {
-        customToast(res.message, 'error')
+      customToast(res.message, 'error')
 
-        if (res.errors) {
-          res?.errors?.map((el) =>
-            setError(el?.field?.toLowerCase() as any, { message: el?.value }, { shouldFocus: true }),
-          )
-        }
+      if (!res?.success && res.errors?.length) {
+        res?.errors?.map((el) =>
+          setError(el?.field?.toLowerCase() as any, { message: el?.value }, { shouldFocus: true }),
+        )
       }
     },
   })
