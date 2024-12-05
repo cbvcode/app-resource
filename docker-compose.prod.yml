@@ -4,6 +4,7 @@ name: app-resource-prod
 
 services:
   server:
+    container_name: server
     build:
       context: server
       dockerfile: Dockerfile-prod
@@ -14,6 +15,7 @@ services:
       - prod-network
 
   client:
+    container_name: client
     depends_on:
       - server
     build:
