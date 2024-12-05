@@ -1,0 +1,25 @@
+.idea
+# client
+client/.idea
+client/node_modules
+client/**/.next
+client/.gitignore
+client/.git
+client/.eslintignore
+client/.eslintrc.cjs
+client/.prettierrc
+client/.env.example
+client/Dockerfile
+client/README.md
+client/tsconfig.tsbuildinfo
+
+# server
+server/**/test
+server/.idea
+server/tmp
+server/.air.toml
+server/.gitignore
+server/.git
+server/.env.example
+server/Dockerfile
+server/README.md
