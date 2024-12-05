@@ -8,7 +8,7 @@ COPY .dockerignore .
 RUN go mod download
 
 COPY . .
-# RUN cp .env.prod .env
+RUN cp .env.prod .env
 RUN go build -o main .
 
 RUN rm -rf ./src
