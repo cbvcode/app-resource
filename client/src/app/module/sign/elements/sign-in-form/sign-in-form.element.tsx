@@ -1,14 +1,14 @@
 'use client'
 
 import { Button, Checkbox, Input, Tooltip } from '@nextui-org/react'
-import { useMutation } from '@tanstack/react-query'
 
 import { Eye, EyeOff } from 'lucide-react'
 
 import { FC, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-import { ISignInReq, signInApi } from '@/app/shared/api/sign.api'
+import { useSignInMutation } from '@/app/shared/api/sign.hook'
+import { ISignInReq } from '@/app/shared/api/sign.interface'
 import { customToast } from '@/core/lib/toast'
 import { errorService } from '@/core/util/util.service'
 
@@ -24,8 +24,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
 
   const { handleSubmit, control, setError } = useForm<ISignInReq>({ defaultValues: { email: '', password: '' } })
 
-  const { mutate, isPending } = useMutation({
-    mutationFn: signInApi,
+  const { mutate, isPending } = useSignInMutation({
     onSuccess: (res) => {
       customToast(res.message, 'error')
       errorService(res, setError)
