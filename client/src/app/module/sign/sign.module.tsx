@@ -30,12 +30,12 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
 
       <div
         className={
-          'flex w-full max-w-md flex-col gap-4 rounded-large bg-default-100/75 px-5 py-6 drop-shadow-sm backdrop-blur-sm backdrop-saturate-150 sm:px-8'
+          'flex w-full max-w-md flex-col gap-4 rounded-large bg-default-100/55 px-5 py-6 drop-shadow-sm backdrop-blur-sm backdrop-saturate-150 sm:px-8'
         }
       >
         <div className='w-full text-left'>
-          <p className='pb-2 text-xl font-medium'>Welcome Back</p>
-          <p className='text-small text-default-500'>Log in to your account to continue</p>
+          <p className='pb-1 text-2xl font-medium'>Welcome Back</p>
+          <p className='pb-1 text-medium text-default-500'>Log in to your account to continue</p>
         </div>
 
         <SignInFormElement />

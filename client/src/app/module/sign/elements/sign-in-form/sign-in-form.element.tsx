@@ -28,7 +28,6 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
     mutationFn: signInApi,
     onSuccess: (res) => {
       customToast(res.message, 'error')
-
       errorService(res, setError)
     },
   })
@@ -51,6 +50,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             label={'Email Address'}
             placeholder={'Enter your email'}
             variant={'bordered'}
+            size={'lg'}
           />
         )}
       />
@@ -68,7 +68,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
               <Tooltip content={`${isVisible ? 'Hide' : 'Show'} password`} placement={'left'}>
                 <Button
                   onClick={handleVisibility}
-                  className={'-mr-1'}
+                  className={'-mb-0.5 -mr-1'}
                   isIconOnly
                   variant={'light'}
                   size={'sm'}
@@ -87,15 +87,18 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             placeholder={'Enter your password'}
             type={isVisible ? 'text' : 'password'}
             variant={'bordered'}
+            size={'lg'}
           />
         )}
       />
 
-      <div className={'flex items-center justify-between px-1 py-2'}>
-        <Checkbox size={'sm'}>Remember me</Checkbox>
+      <div className={'flex items-center justify-end px-0 py-2'}>
+        <Checkbox classNames={{ base: 'flex flex-row-reverse gap-2' }} size={'sm'}>
+          Remember me
+        </Checkbox>
       </div>
 
-      <Button isLoading={isPending} type={'submit'} color={'primary'}>
+      <Button isLoading={isPending} type={'submit'} color={'primary'} size={'lg'}>
         Log In
       </Button>
     </form>
