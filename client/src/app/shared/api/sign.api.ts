@@ -1,6 +1,6 @@
 import { IRes } from '@/app/shared/interface/api.interface'
 import { EReqRoute } from '@/app/shared/interface/route.interface'
-import { restApiFetcher } from '@/core/rest-api/fetcher'
+import { restApiFetcher } from '@/core/lib/rest-api/fetcher'
 
 export interface ISignInReq {
   email: string

@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import { FC, ReactNode } from 'react'
 import { Toaster } from 'react-hot-toast'
 
-import { RestApiProvider } from '@/core/rest-api'
-import { UiProvider } from '@/core/ui'
+import { RestApiProvider } from '../../core/lib/rest-api'
+import { UiProvider } from '../../core/lib/ui'
 
 import './globals.css'
 

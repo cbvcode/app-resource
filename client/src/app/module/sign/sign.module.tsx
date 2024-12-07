@@ -1,11 +1,10 @@
-import Link from 'next/link'
-
 import { SignInFormElement } from './elements/sign-in-form'
 import { PencilRuler } from 'lucide-react'
 
 import { FC } from 'react'
 
 import { EStaticImage } from '@/app/shared/interface/asset.interface'
+import { Link } from '@/core/lib/localization'
 
 // interface
 interface ISignModuleProps {}
@@ -16,11 +15,7 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
   return (
     <main
       className={'flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-4 sm:p-6 lg:p-8'}
-      style={{
-        backgroundImage: `url(${EStaticImage.SIGN_BG})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      style={{ backgroundImage: `url(${EStaticImage.SIGN_BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <div className={'absolute right-10 top-10'}>
         <div className={'flex items-center gap-2'}>

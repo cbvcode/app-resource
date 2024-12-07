@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import { paraglide } from '@inlang/paraglide-next/plugin'
 
 const nextConfig: NextConfig = {
   rewrites: async () => {
@@ -11,4 +12,10 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+export default paraglide({
+  paraglide: {
+    project: './src/core/lib/localization/project.inlang',
+    outdir: './src/core/lib/localization/paraglide',
+  },
+  ...nextConfig,
+})
