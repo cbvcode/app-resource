@@ -1,5 +1,4 @@
 import { SignInFormElement } from './elements/sign-in-form'
-import { PencilRuler } from 'lucide-react'
 
 import { FC } from 'react'
 
@@ -15,11 +14,10 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
   // return
   return (
     <main
-      className={`flex h-screen w-screen items-center justify-center overflow-hidden bg-[url('/image/sign-bg-light.webp')] bg-cover bg-center p-4 dark:bg-[url('/image/sign-bg-dark.webp')] sm:p-6 lg:p-8`}
+      className={`flex h-screen w-screen items-center justify-center overflow-hidden bg-[url('/image/sign-bg.webp')] bg-cover bg-center p-4 dark:bg-[url('/image/sign-bg.webp')] sm:p-6 lg:p-8`}
     >
       <div className={'absolute right-4 top-4 md:right-6 md:top-6'}>
-        <div className={'flex items-center rounded-medium bg-background/40 pl-2 text-foreground/85 backdrop-blur-sm'}>
-          <PencilRuler size={18} />
+        <div className={'flex items-center rounded-medium bg-background/40 pl-1 text-foreground/85 backdrop-blur-sm'}>
           <h1 className={'mx-2 text-xl font-medium'}>CRM</h1>
 
           <LocaleSelectComponent />
