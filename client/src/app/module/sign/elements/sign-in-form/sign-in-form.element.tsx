@@ -29,6 +29,9 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
       customToast(res.message, 'error')
       errorService(res, setError)
     },
+    onError: (error) => {
+      customToast(error.message, 'error')
+    },
   })
   const handleSignIn = (data: ISignInReq) => {
     mutate(data)
