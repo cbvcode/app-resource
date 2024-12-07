@@ -1,4 +1,4 @@
-import { ISignInReq, ISignInRes } from '@/app/shared/api/sign.interface'
+import { ISignInReq, ISignInRes } from '@/app/shared/api/sign/sign.interface'
 import { EReqRoute } from '@/app/shared/interface/route.interface'
 import { restApiFetcher } from '@/core/lib/rest-api/fetcher'
 

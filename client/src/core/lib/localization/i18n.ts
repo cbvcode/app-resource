@@ -5,7 +5,6 @@ import { type AvailableLanguageTag, languageTag } from './paraglide/runtime'
 
 const strategy = PrefixStrategy<AvailableLanguageTag>({
   prefixDefault: 'never',
-  exclude: (pathname) => pathname == '/api' || pathname.startsWith('/api/'),
 })
 
 export const middleware = Middleware({ strategy })

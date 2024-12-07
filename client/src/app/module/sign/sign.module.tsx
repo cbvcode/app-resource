@@ -3,7 +3,8 @@ import { PencilRuler } from 'lucide-react'
 
 import { FC } from 'react'
 
-import { EStaticImage } from '@/app/shared/interface/asset.interface'
+import { LocaleSelectComponent } from '@/app/shared/component/select/locale-select'
+import { ThemeSelectComponent } from '@/app/shared/component/select/theme-select'
 import { Link } from '@/core/lib/localization'
 
 // interface
@@ -14,28 +15,37 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
   // return
   return (
     <main
-      className={'flex h-screen w-screen items-center justify-center overflow-hidden rounded-small p-4 sm:p-6 lg:p-8'}
-      style={{ backgroundImage: `url(${EStaticImage.SIGN_BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className={`flex h-screen w-screen items-center justify-center overflow-hidden bg-[url('/image/sign-bg-light.webp')] bg-cover bg-center p-4 dark:bg-[url('/image/sign-bg-dark.webp')] sm:p-6 lg:p-8`}
     >
-      <div className={'absolute right-10 top-10'}>
-        <div className={'flex items-center gap-2'}>
+      <div className={'absolute right-4 top-4 md:right-6 md:top-6'}>
+        <div className={'flex items-center rounded-medium bg-background/40 pl-2 text-foreground/85 backdrop-blur-sm'}>
           <PencilRuler size={18} />
-          <h1 className={'text-xl font-medium text-white'}>CRM</h1>
+          <h1 className={'mx-2 text-xl font-medium'}>CRM</h1>
+
+          <LocaleSelectComponent />
+
+          <ThemeSelectComponent />
         </div>
       </div>
 
       <div className={'absolute bottom-10 right-10 hidden md:block'}>
-        <p className={'max-w-xl text-center text-small text-white/60'}>Manage your content anytime from anywhere.</p>
+        <p
+          className={
+            'max-w-xl rounded-small bg-background/40 px-2 py-1 text-center text-small text-foreground/85 backdrop-blur-sm'
+          }
+        >
+          Manage your content anytime from anywhere.
+        </p>
       </div>
 
       <div
         className={
-          'flex w-full max-w-md flex-col gap-4 rounded-large bg-default-100/55 px-5 py-6 drop-shadow-sm backdrop-blur-sm backdrop-saturate-150 sm:px-8'
+          'flex w-full max-w-md flex-col gap-4 rounded-large bg-background/80 px-5 py-6 shadow-2xl drop-shadow-sm backdrop-blur-sm backdrop-saturate-150 sm:px-8'
         }
       >
         <div className='w-full text-left'>
           <p className='pb-1 text-2xl font-medium'>Welcome Back</p>
-          <p className='pb-1 text-medium text-default-500'>Log in to your account to continue</p>
+          <p className='pb-1 text-medium text-foreground/65'>Log in to your account to continue</p>
         </div>
 
         <SignInFormElement />

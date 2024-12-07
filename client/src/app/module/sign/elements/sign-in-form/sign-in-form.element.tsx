@@ -7,8 +7,8 @@ import { Eye, EyeOff } from 'lucide-react'
 import { FC, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-import { useSignInMutation } from '@/app/shared/api/sign.hook'
-import { ISignInReq } from '@/app/shared/api/sign.interface'
+import { useSignInMutation } from '@/app/shared/api/sign/sign.hook'
+import { ISignInReq } from '@/app/shared/api/sign/sign.interface'
 import { customToast } from '@/core/lib/toast'
 import { errorService } from '@/core/util/util.service'
 
@@ -51,7 +51,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             errorMessage={error?.message}
             label={'Email Address'}
             placeholder={'Enter your email'}
-            variant={'bordered'}
+            variant={'faded'}
             size={'lg'}
           />
         )}
@@ -88,7 +88,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             name={'password'}
             placeholder={'Enter your password'}
             type={isVisible ? 'text' : 'password'}
-            variant={'bordered'}
+            variant={'faded'}
             size={'lg'}
           />
         )}
