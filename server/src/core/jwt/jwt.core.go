@@ -44,7 +44,7 @@ func CreateToken(ctx *fiber.Ctx, user TokenData) error {
 
 	claims := jwt.MapClaims{
 		"id":  user.ID,
-		"exp": time.Now().Add(time.Second * 30).Unix(),
+		"exp": time.Now().Add(time.Hour * 30).Unix(),
 	}
 
 	tokenData := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
