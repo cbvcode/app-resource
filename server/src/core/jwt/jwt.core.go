@@ -20,6 +20,9 @@ func TokenMiddleware() fiber.Handler {
 
 	return jwtware.New(jwtware.Config{
 		ErrorHandler: func(ctx *fiber.Ctx, err error) error {
+			cookie := fiber.Cookie{Name: "token", Value: "", HTTPOnly: true, Secure: false}
+			ctx.Cookie(&cookie)
+
 			return ctx.Status(fiber.StatusUnauthorized).JSON(config.ResDto{
 				Success: false,
 				Errors:  []*config.ErrDto{{Field: "", Value: "You are Unauthorized"}},
@@ -37,7 +40,7 @@ func CreateToken(ctx *fiber.Ctx, user TokenData) error {
 
 	claims := jwt.MapClaims{
 		"id":  user.ID,
-		"exp": time.Now().Add(time.Hour * 72).Unix(),
+		"exp": time.Now().Add(time.Minute * 1).Unix(),
 	}
 
 	tokenData := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
@@ -51,12 +54,7 @@ func CreateToken(ctx *fiber.Ctx, user TokenData) error {
 		})
 	}
 
-	cookie := fiber.Cookie{
-		Name:     "token",
-		Value:    token,
-		HTTPOnly: true,
-		Secure:   false,
-	}
+	cookie := fiber.Cookie{Name: "token", Value: token, HTTPOnly: true, Secure: false}
 	ctx.Cookie(&cookie)
 
 	return nil
@@ -70,14 +68,10 @@ func GetTokenInfo(ctx *fiber.Ctx) *TokenData {
 	id, _ := uuid.Parse(idStr)
 
 	if id == uuid.Nil {
-		return &TokenData{
-			ID: uuid.Nil,
-		}
+		return &TokenData{ID: uuid.Nil}
 	}
 
-	return &TokenData{
-		ID: id,
-	}
+	return &TokenData{ID: id}
 }
 
 func DeleteToken(ctx *fiber.Ctx) uuid.UUID {
@@ -87,12 +81,7 @@ func DeleteToken(ctx *fiber.Ctx) uuid.UUID {
 	idStr := claims["id"].(string)
 	id, _ := uuid.Parse(idStr)
 
-	cookie := fiber.Cookie{
-		Name:     "token",
-		Value:    "",
-		HTTPOnly: true,
-		Secure:   false,
-	}
+	cookie := fiber.Cookie{Name: "token", Value: "", HTTPOnly: true, Secure: false}
 	ctx.Cookie(&cookie)
 
 	return id

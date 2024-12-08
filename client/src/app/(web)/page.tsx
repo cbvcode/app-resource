@@ -1,14 +1,9 @@
 import { NextPage } from 'next'
-import { initializeLanguage } from '@inlang/paraglide-next'
-
-import { SignModule } from '@/app/module/sign'
 
 // component
-const Page: NextPage = async () => {
-  await initializeLanguage()
-
+const Page: NextPage = () => {
   // return
-  return <SignModule />
+  return null
 }
 
 export default Page

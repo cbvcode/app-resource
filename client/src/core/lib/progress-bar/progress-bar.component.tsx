@@ -10,7 +10,12 @@ const AppProgressBar = dynamic(() => import('next-nprogress-bar').then((mod) => 
 const ProgressBarComponent: FC = () => {
   // return
   return (
-    <AppProgressBar height={'3px'} color={'rgba(86, 127, 250, 1)'} shallowRouting options={{ showSpinner: false }} />
+    <AppProgressBar
+      height={'4px'}
+      color={'hsl(var(--nextui-primary))'}
+      shallowRouting
+      options={{ showSpinner: false }}
+    />
   )
 }
 

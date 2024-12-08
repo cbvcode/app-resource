@@ -24,7 +24,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
   return (
     <Popover isOpen={isOpen} onOpenChange={setIsOpen} placement={'bottom'}>
       <PopoverTrigger>
-        <Button isIconOnly variant={'light'}>
+        <Button isIconOnly variant={'light'} aria-label={'change lang'}>
           <Languages />
         </Button>
       </PopoverTrigger>

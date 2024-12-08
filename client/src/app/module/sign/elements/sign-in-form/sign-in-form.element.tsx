@@ -9,6 +9,8 @@ import { Controller, useForm } from 'react-hook-form'
 
 import { useSignInMutation } from '@/app/shared/api/sign/sign.hook'
 import { ISignInReq } from '@/app/shared/api/sign/sign.interface'
+import { ESiteRoute } from '@/app/shared/interface/route.interface'
+import { useRouter } from '@/core/lib/localization'
 import { customToast } from '@/core/lib/toast'
 import { errorService } from '@/core/util/util.service'
 
@@ -17,6 +19,8 @@ interface ISignInFormElementProps {}
 
 // component
 const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
+  const router = useRouter()
+
   const [isVisible, setIsVisible] = useState(false)
   const handleVisibility = () => {
     setIsVisible(!isVisible)
@@ -28,6 +32,11 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
     onSuccess: (res) => {
       customToast(res.message, 'error')
       errorService(res, setError)
+
+      if (res.success) {
+        router.replace(ESiteRoute.BASE)
+        router.refresh()
+      }
     },
     onError: (error) => {
       customToast(error.message, 'error')
@@ -49,6 +58,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             onChange={onChange}
             isInvalid={!!error?.message}
             errorMessage={error?.message}
+            classNames={{ errorMessage: 'first-letter:capitalize' }}
             label={'Email Address'}
             placeholder={'Enter your email'}
             variant={'faded'}
@@ -66,6 +76,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             onChange={onChange}
             isInvalid={!!error?.message}
             errorMessage={error?.message}
+            classNames={{ errorMessage: 'first-letter:capitalize' }}
             endContent={
               <Tooltip content={`${isVisible ? 'Hide' : 'Show'} password`} placement={'left'}>
                 <Button

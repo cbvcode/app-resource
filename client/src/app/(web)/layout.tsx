@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
+import { LanguageProvider } from '@inlang/paraglide-next'
 
 import { FC, ReactNode } from 'react'
 import { Toaster } from 'react-hot-toast'
 
+import { languageTag } from '@/core/lib/localization'
 import { ProgressBarComponent } from '@/core/lib/progress-bar'
 import { RestApiProvider } from '@/core/lib/rest-api'
 import { UiProvider } from '@/core/lib/ui'
@@ -17,24 +20,34 @@ export const metadata: Metadata = {
 // interface
 interface IRootLayoutProps {
   children: ReactNode
+  sign: ReactNode
+  dashboard: ReactNode
 }
 
 // component
-const RootLayout: FC<Readonly<IRootLayoutProps>> = (props) => {
-  const { children } = props
+const RootLayout: FC<Readonly<IRootLayoutProps>> = async (props) => {
+  const { children, sign, dashboard } = props
+
+  const cookiesStore = await cookies()
+  const token = cookiesStore.get('token')?.value
 
   // return
   return (
-    <html lang={'en'} suppressHydrationWarning>
-      <body className={`antialiased`} suppressHydrationWarning>
-        <UiProvider>
-          <RestApiProvider>{children}</RestApiProvider>
+    <LanguageProvider>
+      <html lang={languageTag()} suppressHydrationWarning>
+        <body className={`antialiased`} suppressHydrationWarning>
+          <UiProvider>
+            <RestApiProvider>
+              {children}
+              {!token ? sign : dashboard}
+            </RestApiProvider>
 
-          <Toaster />
-          <ProgressBarComponent />
-        </UiProvider>
-      </body>
-    </html>
+            <Toaster />
+            <ProgressBarComponent />
+          </UiProvider>
+        </body>
+      </html>
+    </LanguageProvider>
   )
 }
 
