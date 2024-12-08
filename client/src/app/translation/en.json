@@ -9,7 +9,7 @@
     "success_welcome" : "Welcome!",
     "success_see_you_later" : "See you later!",
 
-    "err_bad_request" : "Check the correctness of data management",
+    "err_bad_request" : "Check the correctness of the entered data",
     "err_incorrect_email_or_password" : "Incorrect email or password",
     "err_invalid_request_body" : "Invalid request body",
     "err_user_not_found" : "User not found",

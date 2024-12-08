@@ -25,7 +25,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
     <Popover isOpen={isOpen} onOpenChange={setIsOpen} placement={'left'}>
       <PopoverTrigger>
         <Button isIconOnly variant={'light'} aria-label={'change lang'}>
-          <Languages />
+          <Languages size={20} />
         </Button>
       </PopoverTrigger>
 
@@ -37,7 +37,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
           onClick={handleChangeLang}
           variant={'light'}
           isIconOnly
-          className={'w-full'}
+          className={'w-full font-medium'}
           isDisabled={languageTag() === 'en'}
         >
           EN
@@ -50,7 +50,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
           onClick={handleChangeLang}
           variant={'light'}
           isIconOnly
-          className={'w-full'}
+          className={'w-full font-medium'}
           isDisabled={languageTag() === 'uk'}
         >
           UK

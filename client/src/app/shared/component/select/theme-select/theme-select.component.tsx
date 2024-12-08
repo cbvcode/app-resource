@@ -29,7 +29,8 @@ const ThemeSelectComponent: FC<Readonly<IThemeSelectComponentProps>> = () => {
   // return
   return (
     <Button onPress={handleChangeTheme} variant={'light'} isIconOnly aria-label={'change theme'}>
-      <Moon key={'theme-light'} className={'dark:hidden'} /> <Sun key={'theme-dark'} className={'hidden dark:block'} />
+      <Moon key={'theme-light'} size={20} className={'dark:hidden'} />
+      <Sun key={'theme-dark'} size={20} className={'hidden dark:block'} />
     </Button>
   )
 }

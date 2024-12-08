@@ -1,6 +1,5 @@
 import { ForgotPasswordElement } from './elements/forgot-password'
 import { SignInFormElement } from './elements/sign-in-form'
-import { ChevronLeft } from 'lucide-react'
 
 import { FC } from 'react'
 
@@ -69,7 +68,7 @@ const SignModule: FC<Readonly<ISignModuleProps>> = (props) => {
               href={ESiteRoute.BASE}
               className={'mx-auto flex w-fit items-center gap-1 transition hover:text-foreground/80'}
             >
-              <ChevronLeft size={'14'} /> {t.link_back_to_sign_in()}
+              {t.link_back_to_sign_in()}
             </Link>
           )}
         </p>

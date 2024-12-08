@@ -9,7 +9,7 @@
     "success_welcome" : "Ласкаво просимо!",
     "success_see_you_later" : "До зустрічі!",
 
-    "err_bad_request" : "Перевірте правильність ведення даних",
+    "err_bad_request" : "Перевірте правильність введених даних",
     "err_incorrect_email_or_password" : "Неправильна адреса електронної пошти або пароль",
     "err_invalid_request_body" : "Недійсне тіло запиту",
     "err_user_not_found" : "Користувача не знайдено",
