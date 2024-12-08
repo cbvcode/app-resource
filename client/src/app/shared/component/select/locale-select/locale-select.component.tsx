@@ -22,14 +22,14 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
 
   // return
   return (
-    <Popover isOpen={isOpen} onOpenChange={setIsOpen} placement={'bottom'}>
+    <Popover isOpen={isOpen} onOpenChange={setIsOpen} placement={'left'}>
       <PopoverTrigger>
         <Button isIconOnly variant={'light'} aria-label={'change lang'}>
           <Languages />
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className={'min-w-[48px] rounded-medium px-0 py-1'}>
+      <PopoverContent className={'flex min-w-[48px] flex-row rounded-medium p-0'}>
         <Button
           as={Link}
           href={pathname}
@@ -37,7 +37,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
           onClick={handleChangeLang}
           variant={'light'}
           isIconOnly
-          className={'w-full rounded-none'}
+          className={'w-full'}
           isDisabled={languageTag() === 'en'}
         >
           EN
@@ -50,7 +50,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
           onClick={handleChangeLang}
           variant={'light'}
           isIconOnly
-          className={'w-full rounded-none'}
+          className={'w-full'}
           isDisabled={languageTag() === 'uk'}
         >
           UK
