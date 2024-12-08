@@ -88,11 +88,11 @@ export const errorService = (res: any, setError?: UseFormSetError<any>) => {
     customToast(message, 'error')
   }
 
-  if (!res?.success && res?.errors?.length) {
+  if (!res?.success && res?.errors?.length && setError) {
     res?.errors?.map((el: any) => {
       const message = getErrMsg(el.value)
 
-      return setError?.(el?.field?.toLowerCase(), { message }, { shouldFocus: true })
+      return setError(el?.field?.toLowerCase(), { message }, { shouldFocus: true })
     })
   }
 }
