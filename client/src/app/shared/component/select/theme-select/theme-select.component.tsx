@@ -5,15 +5,13 @@ import { Button } from '@nextui-org/react'
 
 import { Moon, Sun } from 'lucide-react'
 
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 
 // interface
 interface IThemeSelectComponentProps {}
 
 // component
 const ThemeSelectComponent: FC<Readonly<IThemeSelectComponentProps>> = () => {
-  const [mounted, setMounted] = useState(false)
-
   const { theme, setTheme } = useTheme()
   const handleChangeTheme = () => {
     switch (theme) {
@@ -28,22 +26,10 @@ const ThemeSelectComponent: FC<Readonly<IThemeSelectComponentProps>> = () => {
     }
   }
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return (
-      <Button isIconOnly variant={'light'}>
-        <Sun />
-      </Button>
-    )
-  }
-
   // return
   return (
     <Button onClick={handleChangeTheme} variant={'light'} isIconOnly aria-label={'change theme'}>
-      {theme === 'light' ? <Moon /> : <Sun />}
+      <Moon className={'dark:hidden'} /> <Sun className={'hidden dark:block'} />
     </Button>
   )
 }
