@@ -21,11 +21,10 @@ import (
 
 func init() {
 	config.InitEnv()
+	core_cache.InitStore()
 
 	core_db.InitDb()
 	migrate.InitMigrateDb()
-
-	core_cache.InitStore()
 }
 
 // @title			Server API
