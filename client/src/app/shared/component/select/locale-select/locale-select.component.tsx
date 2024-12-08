@@ -6,7 +6,7 @@ import { Languages } from 'lucide-react'
 
 import { FC, useState } from 'react'
 
-import { Link, usePathname } from '@/core/lib/localization'
+import { languageTag, Link, usePathname } from '@/core/lib/localization'
 
 // interface
 interface ILocaleSelectComponentProps {}
@@ -38,6 +38,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
           variant={'light'}
           isIconOnly
           className={'w-full rounded-none'}
+          isDisabled={languageTag() === 'en'}
         >
           EN
         </Button>
@@ -50,6 +51,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
           variant={'light'}
           isIconOnly
           className={'w-full rounded-none'}
+          isDisabled={languageTag() === 'uk'}
         >
           UK
         </Button>

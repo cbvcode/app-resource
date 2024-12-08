@@ -10,7 +10,7 @@ import { Controller, useForm } from 'react-hook-form'
 import { useSignInMutation } from '@/app/shared/api/sign/sign.hook'
 import { ISignInReq } from '@/app/shared/api/sign/sign.interface'
 import { ESiteRoute } from '@/app/shared/interface/route.interface'
-import { useRouter } from '@/core/lib/localization'
+import { t, useRouter } from '@/core/lib/localization'
 import { customToast } from '@/core/lib/toast'
 import { errorService } from '@/core/util/util.service'
 
@@ -60,8 +60,8 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             isInvalid={!!error?.message}
             errorMessage={error?.message}
             classNames={{ errorMessage: 'first-letter:capitalize' }}
-            label={'Email Address'}
-            placeholder={'Enter your email'}
+            label={t.label_email_addr()}
+            placeholder={t.placeholder_email()}
             variant={'faded'}
             size={'lg'}
           />
@@ -79,14 +79,14 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             errorMessage={error?.message}
             classNames={{ errorMessage: 'first-letter:capitalize' }}
             endContent={
-              <Tooltip content={`${isVisible ? 'Hide' : 'Show'} password`} placement={'left'}>
+              <Tooltip content={isVisible ? t.label_hide_pass() : t.label_show_pass()} placement={'left'}>
                 <Button
                   onClick={handleVisibility}
                   className={'-mb-0.5 -mr-1'}
                   isIconOnly
                   variant={'light'}
                   size={'sm'}
-                  aria-label={`${isVisible ? 'Hide' : 'Show'} password`}
+                  aria-label={isVisible ? t.label_hide_pass() : t.label_show_pass()}
                 >
                   {isVisible ? (
                     <EyeOff className={'pointer-events-none text-foreground/50'} />
@@ -96,9 +96,9 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
                 </Button>
               </Tooltip>
             }
-            label={'Password'}
+            label={t.label_pass()}
             name={'password'}
-            placeholder={'Enter your password'}
+            placeholder={t.placeholder_pass()}
             type={isVisible ? 'text' : 'password'}
             variant={'faded'}
             size={'lg'}
@@ -108,12 +108,12 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
 
       <div className={'flex items-center justify-end px-0 py-2'}>
         <Checkbox classNames={{ base: 'flex flex-row-reverse gap-2' }} size={'sm'}>
-          Remember me
+          {t.label_remember_me()}
         </Checkbox>
       </div>
 
       <Button isLoading={isPending} type={'submit'} color={'primary'} size={'lg'}>
-        Log In
+        {t.btn_login()}
       </Button>
     </form>
   )

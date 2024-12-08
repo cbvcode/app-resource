@@ -1,3 +1,19 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format"
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "btn_login" : "Увійти",
+
+    "link_forgot_pass" : "Забули пароль?",
+
+    "label_email_addr" : "Email",
+    "label_pass" : "Пароль",
+    "label_hide_pass" : "Сховати пароль",
+    "label_show_pass" : "Показати пароль",
+    "label_remember_me" : "Запам'ятай мене",
+
+    "placeholder_email" : "Введіть адресу електронної пошти",
+    "placeholder_pass" : "Введіть свій пароль",
+
+    "page_sign_in_title": "Ласкаво просимо",
+    "page_sign_in_subtitle": "Увійдіть у свій обліковий запис, щоб продовжити",
+    "page_sign_in_desc": "Керуйте своїм вмістом будь-коли з будь-якого місця."
 }

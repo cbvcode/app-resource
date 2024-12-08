@@ -4,7 +4,7 @@ import { FC } from 'react'
 
 import { LocaleSelectComponent } from '@/app/shared/component/select/locale-select'
 import { ThemeSelectComponent } from '@/app/shared/component/select/theme-select'
-import { Link } from '@/core/lib/localization'
+import { Link, t } from '@/core/lib/localization'
 
 // interface
 interface ISignModuleProps {}
@@ -32,7 +32,7 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
             'max-w-xl rounded-small bg-background/40 px-2 py-1 text-center text-small text-foreground/85 backdrop-blur-sm'
           }
         >
-          Manage your content anytime from anywhere.
+          {t.page_sign_in_desc()}
         </p>
       </div>
 
@@ -42,14 +42,14 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
         }
       >
         <div className='w-full text-left'>
-          <p className='pb-1 text-2xl font-medium'>Welcome Back</p>
-          <p className='pb-1 text-medium text-foreground/65'>Log in to your account to continue</p>
+          <p className='pb-1 text-2xl font-medium'>{t.page_sign_in_title()}</p>
+          <p className='pb-1 text-medium text-foreground/65'>{t.page_sign_in_subtitle()}</p>
         </div>
 
         <SignInFormElement />
 
         <p className={'text-center text-small'}>
-          <Link href='#'>Forgot password?</Link>
+          <Link href='#'>{t.link_forgot_pass()}</Link>
         </p>
       </div>
     </main>

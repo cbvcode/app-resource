@@ -1,3 +1,19 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format"
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "btn_login" : "Log In",
+
+    "link_forgot_pass" : "Forgot password?",
+
+    "label_email_addr" : "Email",
+    "label_pass" : "Password",
+    "label_hide_pass" : "Hide password",
+    "label_show_pass" : "Show password",
+    "label_remember_me" : "Remember me",
+
+    "placeholder_email" : "Enter your email",
+    "placeholder_pass" : "Enter your password",
+
+    "page_sign_in_title": "Welcome Back",
+    "page_sign_in_subtitle": "Log in to your account to continue",
+    "page_sign_in_desc": "Manage your content anytime from anywhere."
 }
