@@ -22,7 +22,7 @@ func Validator(body interface{}) *config.ResDto {
 
 		return &config.ResDto{
 			Success: false,
-			Message: "Check the correctness of the entered data",
+			Message: "bad request",
 			Errors:  errors,
 			Data:    nil,
 		}
@@ -35,7 +35,7 @@ func ParseBody(ctx *fiber.Ctx, body interface{}) *config.ResDto {
 	if err := ctx.BodyParser(body); err != nil {
 		return &config.ResDto{
 			Success: false,
-			Message: "Invalid request body",
+			Message: "invalid request body",
 			Errors:  nil,
 			Data:    nil,
 		}

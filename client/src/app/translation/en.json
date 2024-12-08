@@ -4,7 +4,20 @@
 
     "link_forgot_pass" : "Forgot password?",
 
-    "err_required" : "Required",
+    "success_welcome" : "Welcome!",
+    "success_see_you_later" : "See you later!",
+
+    "err_bad_request" : "Check the correctness of data management",
+    "err_incorrect_email_or_password" : "Incorrect email or password",
+    "err_invalid_request_body" : "Invalid request body",
+    "err_user_not_found" : "User not found",
+    "err_you_are_unauthorized" : "You are Unauthorized",
+    "err_too_many_requests" : "Too many requests. Please try again later",
+    "err_required" : "Required field",
+    "err_incorrect_email_format" : "Incorrect email format",
+    "err_passwords_do_not_match" : "Passwords do not match",
+    "err_email_already_in_use" : "Email already in use",
+    "err_smt_wrong" : "Oops, something wrong. Try again late",
 
     "label_email_addr" : "Email",
     "label_pass" : "Password",

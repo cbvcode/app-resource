@@ -11,8 +11,7 @@ import { useSignInMutation } from '@/app/shared/api/sign/sign.hook'
 import { ISignInReq } from '@/app/shared/api/sign/sign.interface'
 import { ESiteRoute } from '@/app/shared/interface/route.interface'
 import { t, useRouter } from '@/core/lib/localization'
-import { customToast } from '@/core/lib/toast'
-import { errorService } from '@/core/util/util.service'
+import { errorService, successService } from '@/core/util/util.service'
 
 // interface
 interface ISignInFormElementProps {}
@@ -31,16 +30,15 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
   const { mutate, isPending } = useSignInMutation({
     onSuccess: (res) => {
       if (res.success) {
-        customToast(res.message, 'success')
+        successService(res)
         router.replace(ESiteRoute.BASE)
         router.refresh()
       } else {
-        customToast(res.message, 'error')
         errorService(res, setError)
       }
     },
     onError: (error) => {
-      customToast(error.message, 'error')
+      errorService(error.message)
     },
   })
   const handleSignIn = (data: ISignInReq) => {
@@ -58,7 +56,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             value={value}
             onChange={onChange}
             isInvalid={!!error?.message}
-            errorMessage={error?.message?.includes('required') ? t.err_required() : error?.message}
+            errorMessage={error?.message}
             classNames={{ errorMessage: 'first-letter:capitalize' }}
             label={t.label_email_addr()}
             placeholder={t.placeholder_email()}
@@ -76,7 +74,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             value={value}
             onChange={onChange}
             isInvalid={!!error?.message}
-            errorMessage={error?.message?.includes('required') ? t.err_required() : error?.message}
+            errorMessage={error?.message}
             classNames={{ errorMessage: 'first-letter:capitalize' }}
             endContent={
               <Tooltip content={isVisible ? t.label_hide_pass() : t.label_show_pass()} placement={'left'}>

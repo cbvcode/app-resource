@@ -4,7 +4,20 @@
 
     "link_forgot_pass" : "Забули пароль?",
 
-    "err_required" : "Обов'язковий",
+    "success_welcome" : "Ласкаво просимо!",
+    "success_see_you_later" : "До зустрічі!",
+
+    "err_bad_request" : "Перевірте правильність ведення даних",
+    "err_incorrect_email_or_password" : "Неправильна адреса електронної пошти або пароль",
+    "err_invalid_request_body" : "Недійсне тіло запиту",
+    "err_user_not_found" : "Користувача не знайдено",
+    "err_you_are_unauthorized" : "Ви не авторизовані",
+    "err_too_many_requests" : "Забагато запитів. Спробуйте пізніше",
+    "err_required" : "Обов'язкове поле",
+    "err_incorrect_email_format" : "Неправильний формат електронної пошти",
+    "err_passwords_do_not_match" : "Паролі не збігаються",
+    "err_email_already_in_use" : "Електронна пошта вже використовується",
+    "err_smt_wrong" : "Ой, щось не так. Повторіть спробу пізніше",
 
     "label_email_addr" : "Email",
     "label_pass" : "Пароль",
