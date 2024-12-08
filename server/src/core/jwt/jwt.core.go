@@ -19,6 +19,10 @@ func TokenMiddleware() fiber.Handler {
 	jwtSecret := config.JwtSecret
 
 	return jwtware.New(jwtware.Config{
+		SuccessHandler: func(ctx *fiber.Ctx) error {
+			// ToDo add refresh token
+			return ctx.Next()
+		},
 		ErrorHandler: func(ctx *fiber.Ctx, err error) error {
 			cookie := fiber.Cookie{Name: "token", Value: "", HTTPOnly: true, Secure: false}
 			ctx.Cookie(&cookie)
@@ -40,7 +44,7 @@ func CreateToken(ctx *fiber.Ctx, user TokenData) error {
 
 	claims := jwt.MapClaims{
 		"id":  user.ID,
-		"exp": time.Now().Add(time.Minute * 1).Unix(),
+		"exp": time.Now().Add(time.Second * 30).Unix(),
 	}
 
 	tokenData := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)

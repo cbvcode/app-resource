@@ -32,12 +32,13 @@ const ThemeSelectComponent: FC<Readonly<IThemeSelectComponentProps>> = () => {
     setMounted(true)
   }, [])
 
-  if (!mounted)
+  if (!mounted) {
     return (
       <Button isIconOnly variant={'light'}>
         <Sun />
       </Button>
     )
+  }
 
   // return
   return (
