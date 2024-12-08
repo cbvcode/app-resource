@@ -6,3 +6,8 @@ import { restApiFetcher } from '@/core/lib/rest-api/fetcher'
 export const signInApi = (json: ISignInReq) => {
   return restApiFetcher.post<ISignInRes>(EReqRoute.SIGN_IN, { json }).json()
 }
+
+// forgot password api
+export const forgotPasswordApi = (json: Omit<ISignInReq, 'password'>) => {
+  return restApiFetcher.post<ISignInRes>(EReqRoute.FORGOT_PASSWORD, { json }).json()
+}

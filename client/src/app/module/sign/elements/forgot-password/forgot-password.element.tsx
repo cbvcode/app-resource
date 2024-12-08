@@ -5,7 +5,7 @@ import { Button, Input } from '@nextui-org/react'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-import { useSignInMutation } from '@/app/shared/api/sign/sign.hook'
+import { useForgotPasswordMutation } from '@/app/shared/api/sign/sign.hook'
 import { ISignInReq } from '@/app/shared/api/sign/sign.interface'
 import { ESiteRoute } from '@/app/shared/interface/route.interface'
 import { errorService, successService } from '@/app/shared/service/msg.service'
@@ -18,14 +18,13 @@ interface IForgotPasswordElementProps {}
 const ForgotPasswordElement: FC<Readonly<IForgotPasswordElementProps>> = () => {
   const router = useRouter()
 
-  const { handleSubmit, control, setError } = useForm<ISignInReq>({ defaultValues: { email: '', password: '' } })
+  const { handleSubmit, control, setError } = useForm<Omit<ISignInReq, 'password'>>({ defaultValues: { email: '' } })
 
-  const { mutate, isPending } = useSignInMutation({
+  const { mutate, isPending } = useForgotPasswordMutation({
     onSuccess: (res) => {
       if (res.success) {
         successService(res)
         router.replace(ESiteRoute.BASE)
-        router.refresh()
       } else {
         errorService(res, setError)
       }
@@ -34,13 +33,13 @@ const ForgotPasswordElement: FC<Readonly<IForgotPasswordElementProps>> = () => {
       errorService(error.message)
     },
   })
-  const handleSignIn = (data: ISignInReq) => {
+  const handleOnSubmit = (data: Omit<ISignInReq, 'password'>) => {
     mutate(data)
   }
 
   // return
   return (
-    <form onSubmit={handleSubmit(handleSignIn)} className={'flex flex-col gap-3'}>
+    <form onSubmit={handleSubmit(handleOnSubmit)} className={'flex flex-col gap-3'}>
       <Controller
         control={control}
         name={'email'}

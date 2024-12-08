@@ -25,6 +25,10 @@ type SignUpReqDto struct {
 	Password        string `json:"password" validate:"required=required,gte=10"`
 }
 
+type ForgotPasswordReqDto struct {
+	Email string `json:"email" validate:"required=required,email=incorrect email format"`
+}
+
 type UserProfileResDto struct {
 	Success bool             `json:"success"`
 	Message string           `json:"message"`

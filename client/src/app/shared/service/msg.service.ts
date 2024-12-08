@@ -16,6 +16,10 @@ export const successService = (res: any) => {
         message = t.success_see_you_later()
         break
       }
+      case 'request sent': {
+        message = t.success_request_sent()
+        break
+      }
 
       default: {
         message = res.message

@@ -8,6 +8,7 @@
 
     "success_welcome" : "Ласкаво просимо!",
     "success_see_you_later" : "До зустрічі!",
+    "success_request_sent" : "Запит надіслано!",
 
     "err_bad_request" : "Перевірте правильність введених даних",
     "err_incorrect_email_or_password" : "Неправильна адреса електронної пошти або пароль",

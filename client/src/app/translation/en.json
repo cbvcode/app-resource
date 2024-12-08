@@ -8,6 +8,7 @@
 
     "success_welcome" : "Welcome!",
     "success_see_you_later" : "See you later!",
+    "success_request_sent" : "Request sent!",
 
     "err_bad_request" : "Check the correctness of the entered data",
     "err_incorrect_email_or_password" : "Incorrect email or password",

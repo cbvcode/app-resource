@@ -41,13 +41,13 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
       errorService(error.message)
     },
   })
-  const handleSignIn = (data: ISignInReq) => {
+  const handleOnSubmit = (data: ISignInReq) => {
     mutate(data)
   }
 
   // return
   return (
-    <form onSubmit={handleSubmit(handleSignIn)} className={'flex flex-col gap-3'}>
+    <form onSubmit={handleSubmit(handleOnSubmit)} className={'flex flex-col gap-3'}>
       <Controller
         control={control}
         name={'email'}

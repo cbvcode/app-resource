@@ -165,3 +165,33 @@ func ProfileService(ctx *fiber.Ctx) error {
 		Data:    profile,
 	})
 }
+
+func ForgotPasswordService(ctx *fiber.Ctx) error {
+	var body repo_user.ForgotPasswordReqDto
+	if err := core_util.ParseBody(ctx, &body); err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(err)
+	}
+
+	if err := core_util.Validator(body); err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(err)
+	}
+
+	existingUser := &repo_user.UserProfileDto{}
+	if err := core_db.Db.Model(repo_user.UserModel{}).Where("email = ?", body.Email).First(existingUser).Error; err == nil {
+		return ctx.Status(fiber.StatusOK).JSON(config.ResDto{
+			Success: true,
+			Message: "request sent",
+			Errors:  nil,
+			Data:    nil,
+		})
+	}
+
+	// ToDo add send email
+
+	return ctx.Status(fiber.StatusOK).JSON(config.ResDto{
+		Success: true,
+		Message: "request sent",
+		Errors:  nil,
+		Data:    nil,
+	})
+}

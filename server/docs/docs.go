@@ -15,6 +15,39 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/v1/forgot-password": {
+            "post": {
+                "description": "user forgot password",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "parameters": [
+                    {
+                        "description": "forgot password body",
+                        "name": "json",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/repo_user.ForgotPasswordReqDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/config.ResDto"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/profile": {
             "get": {
                 "description": "user profile",
@@ -156,6 +189,14 @@ const docTemplate = `{
                 }
             }
         },
+        "repo_user.ForgotPasswordReqDto": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                }
+            }
+        },
         "repo_user.SignInReqDto": {
             "type": "object",
             "properties": {
@@ -177,7 +218,8 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "password": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 10
                 },
                 "username": {
                     "type": "string"

@@ -12,6 +12,8 @@ func AuthModule(app fiber.Router) {
 	SignOutRoute(app)
 
 	ProfileRoute(app)
+
+	ForgotPasswordRoute(app)
 }
 
 // SignInRoute
@@ -77,5 +79,22 @@ func ProfileRoute(app fiber.Router) {
 
 	app.Get("profile", core_limiter.LimiterMiddleware(&limit), core_jwt.TokenMiddleware(), func(ctx *fiber.Ctx) error {
 		return ProfileService(ctx)
+	})
+}
+
+// ForgotPasswordRoute
+//
+//	@Description	user forgot password
+//	@Tags			Auth
+//	@Accept			json
+//	@Produce		json
+//	@Param			json	body		repo_user.ForgotPasswordReqDto	true	"forgot password body"
+//	@Success		200		{object}	config.ResDto
+//	@Router			/v1/forgot-password [post]
+func ForgotPasswordRoute(app fiber.Router) {
+	limit := 3
+
+	app.Post("forgot-password", core_limiter.LimiterMiddleware(&limit), func(ctx *fiber.Ctx) error {
+		return ForgotPasswordService(ctx)
 	})
 }
