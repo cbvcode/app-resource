@@ -29,7 +29,7 @@ const LocaleSelectComponent: FC<Readonly<ILocaleSelectComponentProps>> = () => {
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className={'min-w-[44px] rounded-medium px-0 py-1'}>
+      <PopoverContent className={'min-w-[48px] rounded-medium px-0 py-1'}>
         <Button
           as={Link}
           href={pathname}

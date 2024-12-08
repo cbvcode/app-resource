@@ -30,12 +30,13 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
 
   const { mutate, isPending } = useSignInMutation({
     onSuccess: (res) => {
-      customToast(res.message, 'error')
-      errorService(res, setError)
-
       if (res.success) {
+        customToast(res.message, 'success')
         router.replace(ESiteRoute.BASE)
         router.refresh()
+      } else {
+        customToast(res.message, 'error')
+        errorService(res, setError)
       }
     },
     onError: (error) => {
