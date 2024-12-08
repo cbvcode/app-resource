@@ -48,9 +48,10 @@ const SignModule: FC<Readonly<ISignModuleProps>> = (props) => {
         }
       >
         <div className='w-full text-left'>
-          <p className='pb-1 text-2xl font-medium'>
+          <h2 className='pb-1 text-2xl'>
             {variant === 'sign-in' ? t.page_sign_in_title() : t.page_sign_forgot_pass_title()}
-          </p>
+          </h2>
+
           <p className='pb-1 text-medium text-foreground/65'>
             {variant === 'sign-in' ? t.page_sign_in_subtitle() : t.page_sign_forgot_pass_subtitle()}
           </p>
