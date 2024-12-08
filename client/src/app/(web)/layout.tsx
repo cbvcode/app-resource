@@ -5,6 +5,7 @@ import { LanguageProvider } from '@inlang/paraglide-next'
 import { FC, ReactNode } from 'react'
 import { Toaster } from 'react-hot-toast'
 
+import { LayoutModule } from '@/app/module/layout'
 import { languageTag } from '@/core/lib/localization'
 import { ProgressBarComponent } from '@/core/lib/progress-bar'
 import { RestApiProvider } from '@/core/lib/rest-api'
@@ -36,7 +37,7 @@ const RootLayout: FC<Readonly<IRootLayoutProps>> = async (props) => {
       <html lang={languageTag()} suppressHydrationWarning>
         <body className={`antialiased`} suppressHydrationWarning>
           <UiProvider>
-            <RestApiProvider>{!token ? children : dashboard}</RestApiProvider>
+            <RestApiProvider>{!token ? children : <LayoutModule>{dashboard}</LayoutModule>}</RestApiProvider>
 
             <Toaster />
             <ProgressBarComponent />

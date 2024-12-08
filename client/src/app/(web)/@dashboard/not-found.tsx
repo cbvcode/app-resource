@@ -1,16 +1,14 @@
 import { NextPage } from 'next'
-import Link from 'next/link'
+import { initializeLanguage } from '@inlang/paraglide-next'
+
+import { NotFoundModule } from '@/app/module/not-found'
 
 // component
-const NotFound: NextPage = () => {
+const NotFound: NextPage = async () => {
+  await initializeLanguage()
+
   // return
-  return (
-    <div>
-      <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
-      <Link href='/'>Return Home</Link>
-    </div>
-  )
+  return <NotFoundModule />
 }
 
 export default NotFound

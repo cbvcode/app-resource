@@ -2,6 +2,7 @@
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "btn_login" : "Увійти",
     "btn_send" : "Надіслати",
+    "btn_to_home" : "Повернення на Головну",
 
     "link_forgot_pass" : "Забули пароль?",
     "link_back_to_sign_in" : "Назад до входу",
@@ -35,5 +36,8 @@
     "page_sign_in_subtitle": "Увійдіть у свій обліковий запис, щоб продовжити",
     "page_sign_in_desc": "Керуйте своїм вмістом будь-коли з будь-якого місця.",
     "page_sign_forgot_pass_title": "Забули пароль?",
-    "page_sign_forgot_pass_subtitle": "Введіть електронну адресу щоб отримати запит на скидання паролю"
+    "page_sign_forgot_pass_subtitle": "Введіть електронну адресу щоб отримати запит на скидання паролю",
+
+    "page_not_found_title" : "404 - Сторінка не знайдена",
+    "page_not_found_subtitle" : "Ой! Сторінка, яку ви шукаєте, не існує."
 }

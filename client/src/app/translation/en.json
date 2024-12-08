@@ -2,6 +2,7 @@
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "btn_login" : "Log In",
     "btn_send" : "Send",
+    "btn_to_home" : "Return to Home",
 
     "link_forgot_pass" : "Forgot password?",
     "link_back_to_sign_in" : "Back to sign in",
@@ -35,5 +36,8 @@
     "page_sign_in_subtitle": "Log in to your account to continue",
     "page_sign_in_desc": "Manage your content anytime from anywhere.",
     "page_sign_forgot_pass_title": "Forgot password?",
-    "page_sign_forgot_pass_subtitle": "Enter your email address to receive a password reset request"
+    "page_sign_forgot_pass_subtitle": "Enter your email address to receive a password reset request",
+
+    "page_not_found_title" : "404 - Page Not Found",
+    "page_not_found_subtitle" : "Oops! The page you&#39;re looking for doesn&#39;t exist."
 }
