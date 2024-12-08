@@ -20,13 +20,12 @@ export const metadata: Metadata = {
 // interface
 interface IRootLayoutProps {
   children: ReactNode
-  sign: ReactNode
   dashboard: ReactNode
 }
 
 // component
 const RootLayout: FC<Readonly<IRootLayoutProps>> = async (props) => {
-  const { children, sign, dashboard } = props
+  const { children, dashboard } = props
 
   const cookiesStore = await cookies()
   const token = cookiesStore.get('token')?.value
@@ -37,10 +36,7 @@ const RootLayout: FC<Readonly<IRootLayoutProps>> = async (props) => {
       <html lang={languageTag()} suppressHydrationWarning>
         <body className={`antialiased`} suppressHydrationWarning>
           <UiProvider>
-            <RestApiProvider>
-              {children}
-              {!token ? sign : dashboard}
-            </RestApiProvider>
+            <RestApiProvider>{!token ? children : dashboard}</RestApiProvider>
 
             <Toaster />
             <ProgressBarComponent />

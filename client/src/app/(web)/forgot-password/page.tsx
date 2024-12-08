@@ -8,7 +8,7 @@ const Page: NextPage = async () => {
   await initializeLanguage()
 
   // return
-  return <SignModule />
+  return <SignModule variant={'forgot-password'} />
 }
 
 export default Page

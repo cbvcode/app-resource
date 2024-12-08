@@ -1,8 +1,10 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "btn_login" : "Log In",
+    "btn_send" : "Send",
 
     "link_forgot_pass" : "Forgot password?",
+    "link_back_to_sign_in" : "Back to sign in",
 
     "success_welcome" : "Welcome!",
     "success_see_you_later" : "See you later!",
@@ -30,5 +32,7 @@
 
     "page_sign_in_title": "Welcome Back",
     "page_sign_in_subtitle": "Log in to your account to continue",
-    "page_sign_in_desc": "Manage your content anytime from anywhere."
+    "page_sign_in_desc": "Manage your content anytime from anywhere.",
+    "page_sign_forgot_pass_title": "Forgot password?",
+    "page_sign_forgot_pass_subtitle": "Enter your email address to receive a password reset request"
 }

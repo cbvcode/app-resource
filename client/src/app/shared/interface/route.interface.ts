@@ -4,4 +4,5 @@ export enum EReqRoute {
 
 export enum ESiteRoute {
   BASE = '/',
+  FORGOT_PASS = '/forgot-password',
 }

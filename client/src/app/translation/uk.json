@@ -1,8 +1,10 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "btn_login" : "Увійти",
+    "btn_send" : "Надіслати",
 
     "link_forgot_pass" : "Забули пароль?",
+    "link_back_to_sign_in" : "Назад до входу",
 
     "success_welcome" : "Ласкаво просимо!",
     "success_see_you_later" : "До зустрічі!",
@@ -30,5 +32,7 @@
 
     "page_sign_in_title": "Ласкаво просимо",
     "page_sign_in_subtitle": "Увійдіть у свій обліковий запис, щоб продовжити",
-    "page_sign_in_desc": "Керуйте своїм вмістом будь-коли з будь-якого місця."
+    "page_sign_in_desc": "Керуйте своїм вмістом будь-коли з будь-якого місця.",
+    "page_sign_forgot_pass_title": "Забули пароль?",
+    "page_sign_forgot_pass_subtitle": "Введіть електронну адресу щоб отримати запит на скидання паролю"
 }

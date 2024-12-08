@@ -1,16 +1,23 @@
+import { ForgotPasswordElement } from './elements/forgot-password'
 import { SignInFormElement } from './elements/sign-in-form'
+import { ChevronLeft } from 'lucide-react'
 
 import { FC } from 'react'
 
 import { LocaleSelectComponent } from '@/app/shared/component/select/locale-select'
 import { ThemeSelectComponent } from '@/app/shared/component/select/theme-select'
+import { ESiteRoute } from '@/app/shared/interface/route.interface'
 import { Link, t } from '@/core/lib/localization'
 
 // interface
-interface ISignModuleProps {}
+interface ISignModuleProps {
+  variant?: 'sign-in' | 'forgot-password'
+}
 
 // component
-const SignModule: FC<Readonly<ISignModuleProps>> = () => {
+const SignModule: FC<Readonly<ISignModuleProps>> = (props) => {
+  const { variant = 'sign-in' } = props
+
   // return
   return (
     <main
@@ -42,14 +49,29 @@ const SignModule: FC<Readonly<ISignModuleProps>> = () => {
         }
       >
         <div className='w-full text-left'>
-          <p className='pb-1 text-2xl font-medium'>{t.page_sign_in_title()}</p>
-          <p className='pb-1 text-medium text-foreground/65'>{t.page_sign_in_subtitle()}</p>
+          <p className='pb-1 text-2xl font-medium'>
+            {variant === 'sign-in' ? t.page_sign_in_title() : t.page_sign_forgot_pass_title()}
+          </p>
+          <p className='pb-1 text-medium text-foreground/65'>
+            {variant === 'sign-in' ? t.page_sign_in_subtitle() : t.page_sign_forgot_pass_subtitle()}
+          </p>
         </div>
 
-        <SignInFormElement />
+        {variant === 'sign-in' ? <SignInFormElement /> : <ForgotPasswordElement />}
 
         <p className={'text-center text-small'}>
-          <Link href='#'>{t.link_forgot_pass()}</Link>
+          {variant === 'sign-in' ? (
+            <Link href={ESiteRoute.FORGOT_PASS} className={'transition hover:text-foreground/80'}>
+              {t.link_forgot_pass()}
+            </Link>
+          ) : (
+            <Link
+              href={ESiteRoute.BASE}
+              className={'mx-auto flex w-fit items-center gap-1 transition hover:text-foreground/80'}
+            >
+              <ChevronLeft size={'14'} /> {t.link_back_to_sign_in()}
+            </Link>
+          )}
         </p>
       </div>
     </main>
