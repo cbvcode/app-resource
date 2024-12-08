@@ -10,7 +10,7 @@ import { Controller, useForm } from 'react-hook-form'
 import { useSignInMutation } from '@/app/shared/api/sign/sign.hook'
 import { ISignInReq } from '@/app/shared/api/sign/sign.interface'
 import { ESiteRoute } from '@/app/shared/interface/route.interface'
-import { errorService, successService } from '@/app/shared/util/util.service'
+import { errorService, successService } from '@/app/shared/service/msg.service'
 import { t, useRouter } from '@/core/lib/localization'
 
 // interface
