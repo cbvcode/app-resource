@@ -4,6 +4,8 @@
 
     "link_forgot_pass" : "Забули пароль?",
 
+    "err_required" : "Обов'язковий",
+
     "label_email_addr" : "Email",
     "label_pass" : "Пароль",
     "label_hide_pass" : "Сховати пароль",

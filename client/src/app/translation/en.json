@@ -4,6 +4,8 @@
 
     "link_forgot_pass" : "Forgot password?",
 
+    "err_required" : "Required",
+
     "label_email_addr" : "Email",
     "label_pass" : "Password",
     "label_hide_pass" : "Hide password",

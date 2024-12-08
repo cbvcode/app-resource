@@ -58,7 +58,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             value={value}
             onChange={onChange}
             isInvalid={!!error?.message}
-            errorMessage={error?.message}
+            errorMessage={error?.message?.includes('required') ? t.err_required() : error?.message}
             classNames={{ errorMessage: 'first-letter:capitalize' }}
             label={t.label_email_addr()}
             placeholder={t.placeholder_email()}
@@ -76,7 +76,7 @@ const SignInFormElement: FC<Readonly<ISignInFormElementProps>> = () => {
             value={value}
             onChange={onChange}
             isInvalid={!!error?.message}
-            errorMessage={error?.message}
+            errorMessage={error?.message?.includes('required') ? t.err_required() : error?.message}
             classNames={{ errorMessage: 'first-letter:capitalize' }}
             endContent={
               <Tooltip content={isVisible ? t.label_hide_pass() : t.label_show_pass()} placement={'left'}>
