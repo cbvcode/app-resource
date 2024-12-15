@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/basicauth"
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/helmet"
@@ -40,6 +41,9 @@ func main() {
 	app.Use(logger.New())
 
 	app.Get("/", monitor.New(monitor.Config{Title: "Server Metrics"}))
+
+	authConfig := basicauth.Config{Users: map[string]string{"admin": "password"}}
+	app.Use("/docs", basicauth.New(authConfig))
 	app.Get("/docs/*", swagger.HandlerDefault)
 
 	app_route.AppRoutes(app)

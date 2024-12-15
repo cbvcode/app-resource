@@ -15,9 +15,7 @@ var (
 )
 
 func InitEnv() {
-	if err := godotenv.Load(); err != nil {
-		panic("Error loading .env file")
-	}
+	_ = godotenv.Load()
 
 	Port = getEnv("PORT", "4000")
 	AllowOrigins = getEnv("ALLOW_ORIGINS", "*")

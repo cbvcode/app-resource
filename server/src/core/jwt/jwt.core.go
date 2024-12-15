@@ -29,7 +29,8 @@ func TokenMiddleware() fiber.Handler {
 
 			return ctx.Status(fiber.StatusUnauthorized).JSON(config.ResDto{
 				Success: false,
-				Errors:  []*config.ErrDto{{Field: "", Value: "you are unauthorized"}},
+				Message: "you are unauthorized",
+				Errors:  nil,
 				Data:    nil,
 			})
 		},
