@@ -33,5 +33,6 @@ func getEnv(name string, fallback string) string {
 		return fallback
 	}
 
-	panic(fmt.Sprintf(`Environment variable not found: %v`, name))
+	print(fmt.Sprintf(`Environment variable not found: %v`, name))
+	return ""
 }
