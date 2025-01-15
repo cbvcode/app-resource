@@ -24,6 +24,7 @@ func init() {
 	core_cache.InitStore()
 
 	core_db.InitDb()
+	// ToDo
 	//migrate.InitMigrateDb()
 }
 

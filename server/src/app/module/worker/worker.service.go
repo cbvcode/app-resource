@@ -56,7 +56,13 @@ type ResponseData struct {
 }
 
 func WorkerService(ctx *fiber.Ctx) error {
-	cacheKey := "currencies"
+	geo, _ := core_geo.GetGeoInfoFromIp(ctx)
+	detectedCountry := geo.Country
+	if detectedCountry == "" {
+		detectedCountry = "US"
+	}
+
+	cacheKey := fmt.Sprintf("country_%s", detectedCountry)
 	cache := core_cache.CacheGet(cacheKey)
 	if cache != nil {
 		return ctx.Status(fiber.StatusOK).JSON(config.ResDto{
@@ -84,12 +90,6 @@ func WorkerService(ctx *fiber.Ctx) error {
 			"message": "Failed to parse countries data",
 			"error":   err.Error(),
 		})
-	}
-
-	geo, _ := core_geo.GetGeoInfoFromIp(ctx)
-	detectedCountry := geo.Country
-	if detectedCountry == "" {
-		detectedCountry = "US"
 	}
 
 	var country Country
