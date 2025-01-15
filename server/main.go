@@ -12,7 +12,6 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/swagger"
 	_ "server/docs"
-	"server/src/app/migrate"
 	_ "server/src/app/migrate"
 	"server/src/app/route"
 	"server/src/config"
@@ -25,7 +24,7 @@ func init() {
 	core_cache.InitStore()
 
 	core_db.InitDb()
-	migrate.InitMigrateDb()
+	//migrate.InitMigrateDb()
 }
 
 // @title			Server API

@@ -1,0 +1,405 @@
+{
+    "languages": {
+      "en": {
+        "countryCodes": ["AG", "AI", "AS", "AU", "BB", "BM", "BS", "BW", "BZ", "CA", "CK", "DM", "FJ", "FK", "GB", "GD", "GG", "GH", "GI", "GM", "GS", "GU", "GY", "HK", "IE", "IM", "IN", "JE", "JM", "KE", "KI", "KN", "KY", "LC", "LR", "LS", "MH", "MP", "MS", "MT", "MU", "MW", "NA", "NF", "NG", "NR", "NU", "NZ", "PG", "PH", "PN", "PR", "PW", "RW", "SB", "SC", "SG", "SH", "SL", "SS", "SZ", "TC", "TK", "TO", "TT", "TV", "UG", "UM", "US", "VC", "VG", "VI", "WS", "ZA", "ZM", "ZW"],
+        "title": "Excellent",
+        "timeUnits": {
+          "hour": "hour ago",
+          "hours": "hours ago",
+          "day": "day ago",
+          "days": "days ago"
+        },
+        "names": [
+          "Richard Davis",
+          "Emma S.",
+          "James Mitchell",
+          "Olivia W.",
+          "William Harris",
+          "Sophia L.",
+          "Charles Bumstead",
+          "Ava Thompson",
+          "Thomas R.",
+          "Isabella Green"
+        ],
+        "cities": {
+          "major": [
+            {"name": "New York", "country": "United States"},
+            {"name": "London", "country": "United Kingdom"},
+            {"name": "Sydney", "country": "Australia"},
+            {"name": "Toronto", "country": "Canada"},
+            {"name": "Singapore", "country": "Singapore"},
+            {"name": "Dublin", "country": "Ireland"}
+          ],
+          "minor": [
+            {"name": "Manchester", "country": "United Kingdom"},
+            {"name": "Brisbane", "country": "Australia"},
+            {"name": "Vancouver", "country": "Canada"},
+            {"name": "Wellington", "country": "New Zealand"}
+          ]
+        },
+        "reviews": [
+          "Honestly, I didn't expect much, but Cerebrum has totally surprised me. My focus is way better.",
+          "I've noticed how better now I can concentrate and stay focused longer since starting Cerebrum.",
+          "Well, I'm really surprised with my IQ results.",
+          "I gotta give Cerebrum credit for helping me ace my job interview. Money well spent.",
+          "Highly impressive, I was excited to know my IQ, gave me more confidence.",
+          "The questions were a bit tactical but it was fun and I guess Cerebrum IQ is really accurate and therefore great.",
+          "I actually but tried my best and it did pay off i was a great experience and I love it so much",
+          "Was quite interesting to find out the test results. It made me think outside the box, pretty challenging but it needed all my focus",
+          "All things considered, it's worth it",
+          "still the best brain training program I've tried"
+          ]
+      },
+      "de": {
+        "countryCodes": ["AT", "BE", "CH", "DE", "LI", "LU"],
+        "title": "Ausgezeichnet",
+        "timeUnits": {
+          "hour": "Stunde",
+          "hours": "Stunden",
+          "day": "Tag",
+          "days": "Tage"
+        },
+        "names": [
+          "Hans Müller",
+          "Anna S.",
+          "Thomas Schmidt",
+          "Julia W.",
+          "Michael Weber",
+          "Sophie L.",
+          "Andreas Bauer",
+          "Lisa Hoffmann",
+          "Peter K.",
+          "Maria Fischer"
+        ],
+        "cities": {
+          "major": [
+            {"name": "Berlin", "country": "Deutschland"},
+            {"name": "Wien", "country": "Österreich"},
+            {"name": "Zürich", "country": "Schweiz"},
+            {"name": "Hamburg", "country": "Deutschland"},
+            {"name": "München", "country": "Deutschland"},
+            {"name": "Frankfurt", "country": "Deutschland"}
+          ],
+          "minor": [
+            {"name": "Graz", "country": "Österreich"},
+            {"name": "Basel", "country": "Schweiz"},
+            {"name": "Luxemburg", "country": "Luxemburg"},
+            {"name": "Vaduz", "country": "Liechtenstein"}
+          ]
+        },
+        "reviews": [
+"Ehrlich gesagt habe ich nicht viel erwartet, aber Cerebrum hat mich total überrascht. Meine Konzentration ist viel besser.",
+"Ich habe bemerkt, wie viel besser ich mich jetzt konzentrieren und länger fokussiert bleiben kann, seit ich mit Cerebrum angefangen habe.",
+"Nun, ich bin wirklich überrascht von meinen IQ-Ergebnissen.",
+"Ich muss Cerebrum Anerkennung dafür zollen, dass es mir geholfen hat, mein Vorstellungsgespräch zu meistern. Geld gut investiert.",
+"Sehr beeindruckend, ich war aufgeregt, meinen IQ zu erfahren, es gab mir mehr Selbstvertrauen.",
+"Die Fragen waren etwas taktisch, aber es hat Spaß gemacht und ich denke, der Cerebrum IQ ist wirklich genau und daher großartig.",
+"Ich habe tatsächlich mein Bestes gegeben und es hat sich ausgezahlt, es war eine tolle Erfahrung und ich liebe es sehr",
+"Es war ziemlich interessant, die Testergebnisse herauszufinden. Es brachte mich dazu, über den Tellerrand hinauszudenken, ziemlich herausfordernd, aber es erforderte meine ganze Konzentration",
+"Alles in allem lohnt es sich",
+"Immer noch das beste Gehirntraining-Programm, das ich ausprobiert habe"
+]
+      },
+      "es": {
+        "countryCodes": ["AR", "BO", "CL", "CO", "CR", "CU", "DO", "EC", "ES", "GQ", "GT", "HN", "MX", "NI", "PA", "PE", "PR", "PY", "SV", "UY", "VE"],
+        "title": "Excelente",
+        "timeUnits": {
+          "hour": "hora",
+          "hours": "horas",
+          "day": "día",
+          "days": "días"
+        },
+        "names": [
+          "Juan García",
+          "María L.",
+          "Carlos Rodríguez",
+          "Ana M.",
+          "José Martínez",
+          "Laura S.",
+          "Miguel Fernández",
+          "Isabel López",
+          "Antonio G.",
+          "Carmen Pérez"
+        ],
+        "cities": {
+          "major": [
+            {"name": "Madrid", "country": "España"},
+            {"name": "Ciudad de México", "country": "México"},
+            {"name": "Buenos Aires", "country": "Argentina"},
+            {"name": "Bogotá", "country": "Colombia"},
+            {"name": "Santiago", "country": "Chile"},
+            {"name": "Lima", "country": "Perú"}
+          ],
+          "minor": [
+            {"name": "Valencia", "country": "España"},
+            {"name": "Guadalajara", "country": "México"},
+            {"name": "Córdoba", "country": "Argentina"},
+            {"name": "Medellín", "country": "Colombia"}
+          ]
+        },
+      "reviews": [
+"Honestamente, no esperaba mucho, pero Cerebrum me ha sorprendido totalmente. Mi concentración es mucho mejor.",
+"He notado cómo ahora puedo concentrarme mejor y mantener el enfoque por más tiempo desde que comencé con Cerebrum.",
+"Bueno, estoy realmente sorprendido con mis resultados de CI.",
+"Tengo que darle crédito a Cerebrum por ayudarme a tener éxito en mi entrevista de trabajo. Dinero bien gastado.",
+"Muy impresionante, estaba emocionado por conocer mi CI, me dio más confianza.",
+"Las preguntas eran un poco tácticas pero fue divertido y supongo que el CI de Cerebrum es realmente preciso y por lo tanto genial.",
+"En realidad, di lo mejor de mí y valió la pena, fue una gran experiencia y me encanta mucho",
+"Fue bastante interesante descubrir los resultados de la prueba. Me hizo pensar fuera de la caja, bastante desafiante pero necesitaba toda mi concentración",
+"Considerando todo, vale la pena",
+"Sigue siendo el mejor programa de entrenamiento cerebral que he probado"
+]
+      },
+      "fr": {
+        "countryCodes": ["BE", "BF", "BI", "BJ", "BL", "CA", "CD", "CF", "CG", "CI", "CM", "DJ", "FR", "GA", "GF", "GN", "GP", "HT", "LU", "MC", "MF", "MG", "ML", "MQ", "NC", "NE", "PF", "PM", "RE", "RW", "SC", "SN", "TD", "TF", "TG", "VU", "WF", "YT"],
+        "title": "Excellent",
+        "timeUnits": {
+          "hour": "heure",
+          "hours": "heures",
+          "day": "jour",
+          "days": "jours"
+        },
+        "names": [
+          "Jean Dupont",
+          "Marie L.",
+          "Pierre Martin",
+          "Sophie B.",
+          "François Lefebvre",
+          "Camille D.",
+          "Antoine Rousseau",
+          "Élise Moreau",
+          "Lucas G.",
+          "Chloé Petit"
+        ],
+        "cities": {
+          "major": [
+            {"name": "Paris", "country": "France"},
+            {"name": "Montréal", "country": "Canada"},
+            {"name": "Bruxelles", "country": "Belgique"},
+            {"name": "Lyon", "country": "France"},
+            {"name": "Genève", "country": "Suisse"},
+            {"name": "Dakar", "country": "Sénégal"}
+          ],
+          "minor": [
+            {"name": "Bordeaux", "country": "France"},
+            {"name": "Québec", "country": "Canada"},
+            {"name": "Liège", "country": "Belgique"},
+            {"name": "Abidjan", "country": "Côte d'Ivoire"}
+          ]
+        },
+        "reviews": [
+"Honnêtement, je n'attendais pas grand-chose, mais Cerebrum m'a totalement surpris. Ma concentration est bien meilleure.",
+"J'ai remarqué à quel point je peux mieux me concentrer et rester concentré plus longtemps depuis que j'ai commencé Cerebrum.",
+"Eh bien, je suis vraiment surpris par mes résultats de QI.",
+"Je dois reconnaître le mérite de Cerebrum pour m'avoir aidé à réussir mon entretien d'embauche. De l'argent bien dépensé.",
+"Très impressionnant, j'étais excité de connaître mon QI, cela m'a donné plus de confiance.",
+"Les questions étaient un peu tactiques mais c'était amusant et je suppose que le QI Cerebrum est vraiment précis et donc génial.",
+"J'ai vraiment fait de mon mieux et ça a payé, c'était une super expérience et j'adore ça",
+"C'était assez intéressant de découvrir les résultats du test. Cela m'a fait penser différemment, c'était assez difficile mais ça nécessitait toute ma concentration",
+"Tout bien considéré, ça vaut le coup",
+"Toujours le meilleur programme d'entraînement cérébral que j'ai essayé"
+]
+      },
+        "pl": {
+"countryCodes": ["PL"],
+"title": "Doskonały",
+"timeUnits": {
+"hour": "godzinę temu",
+"hours": "godzin temu",
+"day": "dzień temu",
+"days": "dni temu"
+},
+"names": [
+"Jan Kowalski",
+"Anna N.",
+"Piotr Nowak",
+"Katarzyna W.",
+"Andrzej Wiśniewski",
+"Magdalena S.",
+"Tomasz Wójcik",
+"Agnieszka Kowalczyk",
+"Krzysztof M.",
+"Ewa Kamińska"
+],
+"cities": {
+"major": [
+{"name": "Warszawa", "country": "Polska"},
+{"name": "Kraków", "country": "Polska"},
+{"name": "Łódź", "country": "Polska"},
+{"name": "Wrocław", "country": "Polska"},
+{"name": "Poznań", "country": "Polska"},
+{"name": "Gdańsk", "country": "Polska"}
+],
+"minor": [
+{"name": "Szczecin", "country": "Polska"},
+{"name": "Bydgoszcz", "country": "Polska"},
+{"name": "Lublin", "country": "Polska"},
+{"name": "Katowice", "country": "Polska"}
+]
+},
+"reviews": [
+"Szczerze mówiąc, nie spodziewałem się wiele, ale Cerebrum całkowicie mnie zaskoczyło. Moja koncentracja jest znacznie lepsza.",
+"Zauważyłem, o ile lepiej potrafię się teraz skoncentrować i utrzymać skupienie dłużej od czasu rozpoczęcia korzystania z Cerebrum.",
+"Cóż, jestem naprawdę zaskoczony moimi wynikami IQ.",
+"Muszę przyznać Cerebrum zasługi za pomoc w pomyślnym przejściu rozmowy o pracę. Dobrze wydane pieniądze.",
+"Bardzo imponujące, byłem podekscytowany poznaniem swojego IQ, dało mi to więcej pewności siebie.",
+"Pytania były trochę taktyczne, ale to było zabawne i myślę, że IQ Cerebrum jest naprawdę dokładne i dlatego świetne.",
+"Naprawdę się starałem i to się opłaciło, to było wspaniałe doświadczenie i bardzo mi się podoba",
+"Dość interesujące było poznanie wyników testu. Zmusiło mnie to do myślenia poza schematami, dość wymagające, ale wymagało całej mojej uwagi",
+"Biorąc wszystko pod uwagę, warto",
+"Nadal najlepszy program treningu mózgu, jaki wypróbowałem"
+]
+},
+"pt": {
+        "countryCodes": ["AO", "BR", "CV", "GQ", "GW", "MO", "MZ", "PT", "ST", "TL"],
+        "title": "Excelente",
+        "timeUnits": {
+          "hour": "hora",
+          "hours": "horas",
+          "day": "dia",
+          "days": "dias"
+        },
+        "names": [
+          "João Silva",
+          "Maria F.",
+          "Pedro Santos",
+          "Ana C.",
+          "José Oliveira",
+          "Carla M.",
+          "António Ferreira",
+          "Sofia Rodrigues",
+          "Manuel P.",
+          "Beatriz Costa"
+        ],
+        "cities": {
+          "major": [
+            {"name": "Lisboa", "country": "Portugal"},
+            {"name": "São Paulo", "country": "Brasil"},
+            {"name": "Rio de Janeiro", "country": "Brasil"},
+            {"name": "Luanda", "country": "Angola"},
+            {"name": "Maputo", "country": "Moçambique"},
+            {"name": "Porto", "country": "Portugal"}
+          ],
+          "minor": [
+            {"name": "Coimbra", "country": "Portugal"},
+            {"name": "Salvador", "country": "Brasil"},
+            {"name": "Praia", "country": "Cabo Verde"},
+            {"name": "Dili", "country": "Timor-Leste"}
+          ]
+        },
+        "reviews": [
+"Honestamente, não esperava muito, mas o Cerebrum me surpreendeu totalmente. Meu foco está muito melhor.",
+"Notei como agora posso me concentrar melhor e ficar focado por mais tempo desde que comecei a usar o Cerebrum.",
+"Bem, estou realmente surpreso com meus resultados de QI.",
+"Tenho que dar crédito ao Cerebrum por me ajudar a ter sucesso na minha entrevista de emprego. Dinheiro bem gasto.",
+"Muito impressionante, fiquei empolgado em saber meu QI, me deu mais confiança.",
+"As perguntas eram um pouco táticas, mas foi divertido e acho que o QI do Cerebrum é realmente preciso e, portanto, ótimo.",
+"Na verdade, dei o meu melhor e valeu a pena, foi uma ótima experiência e eu adorei muito",
+"Foi bastante interessante descobrir os resultados do teste. Me fez pensar fora da caixa, bastante desafiador, mas precisava de todo o meu foco",
+"Considerando tudo, vale a pena",
+"Ainda é o melhor programa de treinamento cerebral que já experimentei"
+]
+      },
+      "pt_BR": {
+        "countryCodes": ["AO", "BR", "CV", "GQ", "GW", "MO", "MZ", "PT", "ST", "TL"],
+        "title": "Excelente",
+        "timeUnits": {
+          "hour": "hora",
+          "hours": "horas",
+          "day": "dia",
+          "days": "dias"
+        },
+        "names": [
+          "João Silva",
+          "Maria F.",
+          "Pedro Santos",
+          "Ana C.",
+          "José Oliveira",
+          "Carla M.",
+          "António Ferreira",
+          "Sofia Rodrigues",
+          "Manuel P.",
+          "Beatriz Costa"
+        ],
+        "cities": {
+          "major": [
+            {"name": "Lisboa", "country": "Portugal"},
+            {"name": "São Paulo", "country": "Brasil"},
+            {"name": "Rio de Janeiro", "country": "Brasil"},
+            {"name": "Luanda", "country": "Angola"},
+            {"name": "Maputo", "country": "Moçambique"},
+            {"name": "Porto", "country": "Portugal"}
+          ],
+          "minor": [
+            {"name": "Coimbra", "country": "Portugal"},
+            {"name": "Salvador", "country": "Brasil"},
+            {"name": "Praia", "country": "Cabo Verde"},
+            {"name": "Dili", "country": "Timor-Leste"}
+          ]
+        },
+        "reviews": [
+"Honestamente, não esperava muito, mas o Cerebrum me surpreendeu totalmente. Meu foco está muito melhor.",
+"Notei como agora posso me concentrar melhor e ficar focado por mais tempo desde que comecei a usar o Cerebrum.",
+"Bem, estou realmente surpreso com meus resultados de QI.",
+"Tenho que dar crédito ao Cerebrum por me ajudar a ter sucesso na minha entrevista de emprego. Dinheiro bem gasto.",
+"Muito impressionante, fiquei empolgado em saber meu QI, me deu mais confiança.",
+"As perguntas eram um pouco táticas, mas foi divertido e acho que o QI do Cerebrum é realmente preciso e, portanto, ótimo.",
+"Na verdade, dei o meu melhor e valeu a pena, foi uma ótima experiência e eu adorei muito",
+"Foi bastante interessante descobrir os resultados do teste. Me fez pensar fora da caixa, bastante desafiador, mas precisava de todo o meu foco",
+"Considerando tudo, vale a pena",
+"Ainda é o melhor programa de treinamento cerebral que já experimentei"
+]
+      },
+      "no": {
+        "countryCodes": ["NO", "SJ", "SE", "DK", "IS"],
+        "title": "Utmerket",
+        "timeUnits": {
+          "hour": "time siden",
+          "hours": "timer siden",
+          "day": "dag siden",
+          "days": "dager siden"
+        },
+        "names": [
+          "Anders Hansen",
+          "Emma S.",
+          "Jonas Nilsen",
+          "Olivia W.",
+          "William Larsen",
+          "Sofia L.",
+          "Christian Pedersen",
+          "Ada Thompson",
+          "Thomas R.",
+          "Ingrid Berg"
+        ],
+        "cities": {
+          "major": [
+            {"name": "Oslo", "country": "Norge"},
+            {"name": "Bergen", "country": "Norge"},
+            {"name": "Stockholm", "country": "Sverige"},
+            {"name": "København", "country": "Danmark"},
+            {"name": "Helsinki", "country": "Finland"},
+            {"name": "Göteborg", "country": "Sverige"}
+          ],
+          "minor": [
+            {"name": "Trondheim", "country": "Norge"},
+            {"name": "Stavanger", "country": "Norge"},
+            {"name": "Tromsø", "country": "Norge"},
+            {"name": "Ålesund", "country": "Norge"}
+          ]
+        },
+        "reviews": [
+          "Ærlig talt, jeg forventet ikke mye, men Cerebrum har virkelig overrasket meg. Fokuset mitt er mye bedre.",
+          "Jeg har lagt merke til hvor mye bedre jeg kan konsentrere meg og holde fokus lenger siden jeg begynte med Cerebrum.",
+          "Vel, jeg er virkelig overrasket over IQ-resultatene mine.",
+          "Jeg må gi Cerebrum æren for at jeg klarte jobbintervjuet. Pengene var vel anvendt.",
+          "Meget imponerende, jeg var spent på å få vite min IQ, ga meg mer selvtillit.",
+          "Spørsmålene var litt taktiske, men det var gøy og jeg antar at Cerebrum IQ er virkelig nøyaktig og derfor flott.",
+          "Jeg gjorde faktisk mitt beste og det lønte seg, det var en flott opplevelse og jeg elsket det veldig.",
+          "Det var ganske interessant å finne ut testresultatene. Det fikk meg til å tenke utenfor boksen, ganske utfordrende men det krevde all min konsentrasjon.",
+          "Alt tatt i betraktning, er det verdt det.",
+          "fortsatt det beste hjernetreningsprogrammet jeg har prøvd"
+        ]
+      }
+    }
+
+}
