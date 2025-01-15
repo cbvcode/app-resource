@@ -62,7 +62,7 @@ func WorkerService(ctx *fiber.Ctx) error {
 		detectedCountry = "US"
 	}
 
-	cacheKey := fmt.Sprintf("country_%s", detectedCountry)
+	cacheKey := fmt.Sprintf("country:%s", detectedCountry)
 	cache := core_cache.CacheGet(cacheKey)
 	if cache != nil {
 		return ctx.Status(fiber.StatusOK).JSON(config.ResDto{
