@@ -20,7 +20,7 @@ func InitEnv() {
 	Port = getEnv("PORT", "4000")
 	AllowOrigins = getEnv("ALLOW_ORIGINS", "*")
 	JwtSecret = getEnv("JWT_SECRET", "your-secret-key")
-	LocalIp = getEnv("LOCAL_IP", "35.181.8.72")
+	LocalIp = getEnv("LOCAL_IP", "")
 	DatabaseUrl = getEnv("DATABASE_URL", "host=localhost user=postgres password=password dbname=local port=5434")
 }
 
