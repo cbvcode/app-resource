@@ -10,7 +10,7 @@
 
 1. **Copy project example .env file**
    ```sh
-   cp .config.example .config
+   cp .env.example .env
    ```
 2. **Install air**
    ```sh
